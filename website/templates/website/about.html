@@ -1,0 +1,42 @@
+{% extends "website/base.html" %}
+
+{% block title %}About — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="iz-page-hero">
+  <div class="container wide iz-page-hero__inner">
+    <h1 class="iz-page-title vt-anim-inner">about <span class="iz-page-title__accent">visions tech</span></h1>
+    <p class="ar page-eyebrow-ar vt-anim-inner">من نحن</p>
+    <p class="iz-page-lead vt-anim-inner">Visions Tech is a technology company focused on enabling digital transformation through intelligent platforms, enterprise solutions, and execution-driven services. We combine strategic thinking with technical delivery to help organizations modernize, integrate, and scale with confidence.</p>
+    <p class="iz-page-lead ar vt-anim-inner">Visions Tech هي شركة تقنية متخصصة في تمكين التحول الرقمي من خلال منصات ذكية، وحلول مؤسسية، وخدمات تنفيذية ترتكز على النتائج. نجمع بين التفكير الاستراتيجي والقدرة التقنية لمساعدة المؤسسات على التحديث والتكامل والتوسع بثقة.</p>
+  </div>
+</section>
+
+<section class="iz-section iz-section--soft iz-section--page">
+  <div class="container wide">
+    <div class="card card-spaced vt-reveal">
+      <h2>Vision and Mission</h2>
+      <p class="ar section-sub">الرؤية والرسالة</p>
+      <div class="stack-en-ar">
+        <p class="en"><strong>Vision — </strong>To be a trusted technology partner for organizations seeking scalable digital growth and measurable transformation impact.</p>
+        <p class="ar"><strong>الرؤية — </strong>أن نكون شريكاً تقنياً موثوقاً للمؤسسات التي تسعى إلى نمو رقمي قابل للتوسع وأثر تحولي ملموس.</p>
+        <p class="en"><strong>Mission — </strong>To design, deliver, and support practical technology solutions that improve performance, accelerate innovation, and create long-term value.</p>
+        <p class="ar"><strong>الرسالة — </strong>تصميم وتقديم ودعم حلول تقنية عملية ترفع الأداء، وتسرع الابتكار، وتخلق قيمة مستدامة طويلة الأجل.</p>
+      </div>
+    </div>
+
+    <div class="card card-spaced-tight vt-reveal" data-reveal-delay="80">
+      <h2>Regional Presence</h2>
+      <p class="ar section-sub">الانتشار الإقليمي</p>
+      <p>Our footprint spans 14+ countries across the region, enabling us to serve organizations with local context, regional agility, and broad implementation exposure—including Jordan, KSA, Oman, UAE, Iraq, Bahrain, Palestine, Syria, Libya, Lebanon, and others.</p>
+      <p class="ar">يمتد حضورنا إلى أكثر من 14 دولة في المنطقة، مما يمكننا من خدمة المؤسسات بفهم محلي، ومرونة إقليمية، وخبرة تنفيذية واسعة، في دول تشمل الأردن، السعودية، عُمان، الإمارات، العراق، البحرين، فلسطين، سوريا، ليبيا، لبنان وغيرها.</p>
+    </div>
+
+    <div class="cta-band cta-band--page vt-reveal" data-reveal-delay="120">
+      <h2>ready to work together?</h2>
+      <p class="ar">هل أنتم مستعدون للانطلاق؟</p>
+      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> contact us</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

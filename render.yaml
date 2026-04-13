@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: visions-tek-web
+    env: python
+    plan: starter
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: gunicorn hasan_test.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: visions-tek.com,www.visions-tek.com
+      - key: DJANGO_CSRF_TRUSTED_ORIGINS
+        value: https://visions-tek.com,https://www.visions-tek.com
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+

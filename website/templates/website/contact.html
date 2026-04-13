@@ -1,0 +1,71 @@
+{% extends "website/base.html" %}
+
+{% block title %}Contact — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="iz-page-hero">
+  <div class="container wide iz-page-hero__inner">
+    <h1 class="iz-page-title vt-anim-inner">let’s build your <span class="iz-page-title__accent">transformation</span> journey</h1>
+    <p class="ar page-eyebrow-ar vt-anim-inner">دعونا نبني رحلة التحول الخاصة بكم</p>
+    <p class="iz-page-lead vt-anim-inner">Whether you are exploring ERP, digital transformation, AI, or enterprise infrastructure, our team is ready to discuss your goals and recommend the right path forward.</p>
+    <p class="iz-page-lead ar vt-anim-inner">سواء كنتم تدرسون ERP أو التحول الرقمي أو الذكاء الصناعي أو البنية التحتية المؤسسية، فإن فريقنا جاهز لمناقشة أهدافكم واقتراح المسار الأنسب للمضي قدماً.</p>
+  </div>
+</section>
+
+<section class="iz-section iz-section--soft iz-section--page">
+  <div class="container wide">
+    <div class="contact-layout">
+      <form class="contact-form card vt-reveal" method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <h2 class="contact-form__title">send a message</h2>
+        <p class="ar section-sub contact-form__title-ar">أرسل رسالة</p>
+        <label for="id_name">
+          Full Name
+          <span class="ar-label ar">الاسم الكامل</span>
+        </label>
+        <input id="id_name" name="name" type="text" autocomplete="name" required>
+
+        <label for="id_email">
+          Email Address
+          <span class="ar-label ar">البريد الإلكتروني</span>
+        </label>
+        <input id="id_email" name="email" type="email" autocomplete="email" required>
+
+        <label for="id_company">
+          Company Name
+          <span class="ar-label ar">اسم الشركة</span>
+        </label>
+        <input id="id_company" name="company" type="text" autocomplete="organization">
+
+        <label for="id_phone">
+          Phone Number
+          <span class="ar-label ar">رقم الهاتف</span>
+        </label>
+        <input id="id_phone" name="phone" type="tel" autocomplete="tel">
+
+        <label for="id_message">
+          Message
+          <span class="ar-label ar">الرسالة</span>
+        </label>
+        <textarea id="id_message" name="message" rows="5" required></textarea>
+
+        <button class="btn btn-primary iz-btn" type="submit">send message</button>
+      </form>
+
+      <div class="contact-details card vt-reveal" data-reveal-delay="100">
+        <h2>Our Offices</h2>
+        <p class="ar section-sub">مكاتبنا</p>
+        <p><strong>Head Office:</strong> 7th Circle, Amman, Hashemite Kingdom of Jordan</p>
+        <p class="ar"><strong>المكتب الرئيسي:</strong> الدوار السابع، عمّان، المملكة الأردنية الهاشمية</p>
+        <p><strong>Regional Office, Oman:</strong> Al Athaiba, Muscat, Sultanate of Oman</p>
+        <p class="ar"><strong>المكتب الإقليمي، عُمان:</strong> العذيبة، مسقط، سلطنة عُمان</p>
+        <p><strong>Regional Office, Syria:</strong> Al Mazzeh, Damascus, Syrian Arab Republic</p>
+        <p class="ar"><strong>المكتب الإقليمي، سوريا:</strong> المزة، دمشق، الجمهورية العربية السورية</p>
+        <p><strong>Website:</strong> <a href="https://www.visions-tek.com" rel="noopener noreferrer">www.visions-tek.com</a></p>
+        <p class="ar"><strong>الموقع الإلكتروني:</strong> <a href="https://www.visions-tek.com" dir="ltr">www.visions-tek.com</a></p>
+      </div>
+    </div>
+    <p class="hint hint--contact">This form shows a success message only. To send email, configure Django email settings or connect a service later.</p>
+  </div>
+</section>
+{% endblock %}

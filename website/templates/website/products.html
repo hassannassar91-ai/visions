@@ -1,0 +1,82 @@
+{% extends "website/base.html" %}
+
+{% block title %}Products — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="iz-page-hero">
+  <div class="container wide iz-page-hero__inner">
+    <h1 class="iz-page-title vt-anim-inner">products <span class="iz-page-title__accent">&amp; platforms</span></h1>
+    <p class="ar page-eyebrow-ar vt-anim-inner">المنتجات والمنصات</p>
+    <p class="iz-page-lead vt-anim-inner">Our product portfolio combines configurable business applications with modern data and low-code capabilities to help organizations move faster and operate smarter.</p>
+    <p class="iz-page-lead ar vt-anim-inner">يجمع portfolio المنتجات لدينا بين تطبيقات أعمال مرنة وقدرات حديثة في البيانات والتطوير منخفض الكود لمساعدة المؤسسات على العمل بسرعة وذكاء أكبر.</p>
+  </div>
+</section>
+
+<section class="iz-section iz-section--soft iz-section--page">
+  <div class="container wide">
+    <div class="grid-3">
+      <article class="card vt-reveal">
+        <h2>Visions ERP</h2>
+        <p class="ar section-sub">Visions ERP</p>
+        <p>Visions ERP is a flexible business platform designed to unify finance, human resources, procurement, inventory, sales, and operational processes in one integrated environment.</p>
+        <p class="ar">Visions ERP هو منصة أعمال مرنة صممت لتوحيد المالية، والموارد البشرية، والمشتريات، والمخزون، والمبيعات، والعمليات ضمن بيئة واحدة متكاملة.</p>
+        <h3>Business benefits</h3>
+        <p class="ar benefits-tag-ar">فوائد الأعمال</p>
+        <ul class="list checks">
+          <li>Better visibility across departments</li>
+          <li>Improved operational control</li>
+          <li>Scalable foundation for growth</li>
+        </ul>
+        <ul class="list ar-checks">
+          <li>رؤية أوضح عبر الإدارات</li>
+          <li>ضبط تشغيلي أفضل</li>
+          <li>أساس قابل للتوسع للنمو</li>
+        </ul>
+      </article>
+      <article class="card vt-reveal" data-reveal-delay="80">
+        <h2>AI &amp; Analytics Platform</h2>
+        <p class="ar section-sub">منصة الذكاء الصناعي والتحليلات</p>
+        <p>Our AI platform enables organizations to integrate data, automate analysis, generate predictive insights, and support decisions with faster and clearer intelligence.</p>
+        <p class="ar">تتيح منصة الذكاء الصناعي لدينا للمؤسسات دمج البيانات، وأتمتة التحليل، وتوليد رؤى تنبؤية، ودعم القرارات بذكاء أسرع وأوضح.</p>
+        <h3>Business benefits</h3>
+        <p class="ar benefits-tag-ar">فوائد الأعمال</p>
+        <ul class="list checks">
+          <li>Faster decisions</li>
+          <li>Improved service insight</li>
+          <li>Better operational forecasting</li>
+        </ul>
+        <ul class="list ar-checks">
+          <li>قرارات أسرع</li>
+          <li>فهم أعمق للخدمة</li>
+          <li>توقعات تشغيلية أفضل</li>
+        </ul>
+      </article>
+      <article class="card vt-reveal" data-reveal-delay="160">
+        <h2>Low-Code Platform</h2>
+        <p class="ar section-sub">منصة التطوير منخفض الكود</p>
+        <p>Our low-code platform helps organizations rapidly build business applications, portals, forms, workflows, and service experiences with less complexity and faster turnaround.</p>
+        <p class="ar">تساعد منصة التطوير منخفض الكود المؤسسات على بناء تطبيقات الأعمال، والبوابات، والنماذج، وسير العمل، وتجارب الخدمة بسرعة أعلى وتعقيد أقل.</p>
+        <h3>Business benefits</h3>
+        <p class="ar benefits-tag-ar">فوائد الأعمال</p>
+        <ul class="list checks">
+          <li>Accelerated delivery</li>
+          <li>Lower build cost</li>
+          <li>Faster response to change</li>
+        </ul>
+        <ul class="list ar-checks">
+          <li>تسريع الإطلاق</li>
+          <li>خفض تكلفة البناء</li>
+          <li>استجابة أسرع للتغيير</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="cta-band cta-band--page vt-reveal" data-reveal-delay="100">
+      <h2>ready to accelerate your transformation?</h2>
+      <p class="ar">هل أنتم مستعدون لتسريع رحلة التحول؟</p>
+      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> book a consultation</a>
+      <p class="ar cta-sub-ar">احجز استشارة</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

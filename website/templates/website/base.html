@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ company_name }}{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body>
+  <header class="site-header vt-header-enter">
+    <div class="container header-inner">
+      <a class="logo logo--img" href="{% url 'home' %}">
+        <img
+          src="{% static 'website/images/visions-tech-logo.jpeg' %}"
+          alt="{{ company_name }}"
+          class="logo__img"
+          width="220"
+          height="66"
+          decoding="async"
+          fetchpriority="high"
+        >
+      </a>
+      <nav class="nav nav--iz" aria-label="Main">
+        <a href="{% url 'home' %}">home</a>
+        <a href="{% url 'about' %}">about us</a>
+        <a href="{% url 'solutions' %}">solutions</a>
+        <a href="{% url 'industries' %}">industries</a>
+        <a href="{% url 'products' %}">products</a>
+        <a href="{% url 'projects' %}">projects</a>
+        <a href="{% url 'contact' %}">contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  {% if messages %}
+    <div class="container messages" role="status">
+      {% for message in messages %}
+        <p class="message message-{{ message.tags }}">{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer site-footer--iz">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img
+          src="{% static 'website/images/visions-tech-logo.jpeg' %}"
+          alt=""
+          class="footer-logo"
+          width="160"
+          height="48"
+          decoding="async"
+        >
+        <p class="footer-tagline">innovate <span class="footer-sep">•</span> integrate <span class="footer-sep">•</span> inspire</p>
+        <p class="footer-company">{{ company_name }} — enterprise digital solutions</p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-heading">explore</p>
+        <ul>
+          <li><a href="{% url 'solutions' %}">solutions</a></li>
+          <li><a href="{% url 'industries' %}">industries</a></li>
+          <li><a href="{% url 'products' %}">products</a></li>
+          <li><a href="{% url 'contact' %}">contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-heading">connect</p>
+        <ul>
+          <li><a href="https://www.visions-tek.com" rel="noopener noreferrer">www.visions-tek.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; {% now "Y" %} {{ company_name }}. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="{% static 'website/js/vt-animations.js' %}" defer></script>
+</body>
+</html>
