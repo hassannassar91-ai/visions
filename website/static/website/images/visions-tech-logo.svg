@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" role="img" aria-labelledby="title desc">
+  <title id="title">Visions Tech Logo</title>
+  <desc id="desc">Placeholder logo for static hosting reliability</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1f3b8b" />
+      <stop offset="100%" stop-color="#2fc4c9" />
+    </linearGradient>
+  </defs>
+  <rect width="480" height="160" rx="16" fill="#0b1228" />
+  <rect x="16" y="16" width="448" height="128" rx="12" fill="url(#g)" opacity="0.16" />
+  <g fill="#ffffff">
+    <path d="M68 104L98 48h22l-30 56H68z" opacity="0.9" />
+    <path d="M112 104l30-56h22l-30 56h-22z" opacity="0.75" />
+    <circle cx="178" cy="76" r="8" opacity="0.9" />
+  </g>
+  <text x="206" y="74" font-family="Outfit, Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">
+    VISIONS
+  </text>
+  <text x="206" y="108" font-family="Outfit, Arial, sans-serif" font-size="24" font-weight="500" fill="#b9f4f6">
+    TECH
+  </text>
+</svg>
