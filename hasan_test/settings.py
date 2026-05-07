@@ -16,17 +16,22 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes")
 
+DEFAULT_PROD_DOMAINS = [
+    "visions-tek.com",
+    "www.visions-tek.com",
+]
+
 _allowed = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
 if _allowed:
     ALLOWED_HOSTS = [h.strip() for h in _allowed.split(",") if h.strip()]
 else:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1"] + DEFAULT_PROD_DOMAINS
 
 _csrf = os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "").strip()
 if _csrf:
     CSRF_TRUSTED_ORIGINS = [x.strip() for x in _csrf.split(",") if x.strip()]
 else:
-    CSRF_TRUSTED_ORIGINS = []
+    CSRF_TRUSTED_ORIGINS = [f"https://{domain}" for domain in DEFAULT_PROD_DOMAINS]
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
