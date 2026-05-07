@@ -17,43 +17,43 @@
     <div class="contact-layout">
       <form class="contact-form card vt-reveal" method="post" action="{% url 'contact' %}">
         {% csrf_token %}
-        <h2 class="contact-form__title">send a message</h2>
+        <h2 class="contact-form__title">{% if is_arabic %}أرسل رسالة{% else %}send a message{% endif %}</h2>
         <p class="ar section-sub contact-form__title-ar">أرسل رسالة</p>
         <label for="id_name">
-          Full Name
+          {% if is_arabic %}الاسم الكامل{% else %}Full Name{% endif %}
           <span class="ar-label ar">الاسم الكامل</span>
         </label>
         <input id="id_name" name="name" type="text" autocomplete="name" required>
 
         <label for="id_email">
-          Email Address
+          {% if is_arabic %}البريد الإلكتروني{% else %}Email Address{% endif %}
           <span class="ar-label ar">البريد الإلكتروني</span>
         </label>
         <input id="id_email" name="email" type="email" autocomplete="email" required>
 
         <label for="id_company">
-          Company Name
+          {% if is_arabic %}اسم الشركة{% else %}Company Name{% endif %}
           <span class="ar-label ar">اسم الشركة</span>
         </label>
         <input id="id_company" name="company" type="text" autocomplete="organization">
 
         <label for="id_phone">
-          Phone Number
+          {% if is_arabic %}رقم الهاتف{% else %}Phone Number{% endif %}
           <span class="ar-label ar">رقم الهاتف</span>
         </label>
         <input id="id_phone" name="phone" type="tel" autocomplete="tel">
 
         <label for="id_message">
-          Message
+          {% if is_arabic %}الرسالة{% else %}Message{% endif %}
           <span class="ar-label ar">الرسالة</span>
         </label>
         <textarea id="id_message" name="message" rows="5" required></textarea>
 
-        <button class="btn btn-primary iz-btn" type="submit">send message</button>
+        <button class="btn btn-primary iz-btn" type="submit">{% if is_arabic %}إرسال الرسالة{% else %}send message{% endif %}</button>
       </form>
 
       <div class="contact-details card vt-reveal" data-reveal-delay="100">
-        <h2>Our Offices</h2>
+        <h2>{% if is_arabic %}مكاتبنا{% else %}Our Offices{% endif %}</h2>
         <p class="ar section-sub">مكاتبنا</p>
         <p><strong>Head Office:</strong> 7th Circle, Amman, Hashemite Kingdom of Jordan</p>
         <p class="ar"><strong>المكتب الرئيسي:</strong> الدوار السابع، عمّان، المملكة الأردنية الهاشمية</p>
@@ -65,7 +65,7 @@
         <p class="ar"><strong>الموقع الإلكتروني:</strong> <a href="https://www.visions-tek.com" dir="ltr">www.visions-tek.com</a></p>
       </div>
     </div>
-    <p class="hint hint--contact">This form shows a success message only. To send email, configure Django email settings or connect a service later.</p>
+    <p class="hint hint--contact">{% if is_arabic %}هذا النموذج يعرض رسالة نجاح فقط. لإرسال بريد فعلي، قم بإعداد إعدادات البريد في Django أو اربط خدمة بريد لاحقًا.{% else %}This form shows a success message only. To send email, configure Django email settings or connect a service later.{% endif %}</p>
   </div>
 </section>
 {% endblock %}

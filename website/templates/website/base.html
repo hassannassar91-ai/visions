@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if is_arabic %}ar{% else %}en{% endif %}" dir="{% if is_arabic %}rtl{% else %}ltr{% endif %}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
 </head>
-<body>
+<body class="{% if is_arabic %}lang-ar{% else %}lang-en{% endif %}">
   <header class="site-header vt-header-enter">
     <div class="container header-inner">
       <a class="logo logo--img" href="{% url 'home' %}">
@@ -25,6 +25,15 @@
         >
       </a>
       <nav class="nav nav--iz" aria-label="Main">
+        {% if is_arabic %}
+        <a href="{% url 'home' %}">الرئيسية</a>
+        <a href="{% url 'about' %}">من نحن</a>
+        <a href="{% url 'solutions' %}">الحلول</a>
+        <a href="{% url 'industries' %}">القطاعات</a>
+        <a href="{% url 'products' %}">المنتجات</a>
+        <a href="{% url 'projects' %}">المشاريع</a>
+        <a href="{% url 'contact' %}">تواصل معنا</a>
+        {% else %}
         <a href="{% url 'home' %}">home</a>
         <a href="{% url 'about' %}">about us</a>
         <a href="{% url 'solutions' %}">solutions</a>
@@ -32,6 +41,11 @@
         <a href="{% url 'products' %}">products</a>
         <a href="{% url 'projects' %}">projects</a>
         <a href="{% url 'contact' %}">contact us</a>
+        {% endif %}
+        <div class="lang-tabs" role="group" aria-label="Language switch">
+          <a class="lang-tab {% if not is_arabic %}is-active{% endif %}" href="{% url 'set_language' %}?lang=en&next={{ request.get_full_path|urlencode }}">EN</a>
+          <a class="lang-tab {% if is_arabic %}is-active{% endif %}" href="{% url 'set_language' %}?lang=ar&next={{ request.get_full_path|urlencode }}">AR</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -59,27 +73,27 @@
           height="48"
           decoding="async"
         >
-        <p class="footer-tagline">innovate <span class="footer-sep">•</span> integrate <span class="footer-sep">•</span> inspire</p>
-        <p class="footer-company">{{ company_name }} — enterprise digital solutions</p>
+        <p class="footer-tagline">{% if is_arabic %}نبتكر <span class="footer-sep">•</span> ندمج <span class="footer-sep">•</span> نُلهم{% else %}innovate <span class="footer-sep">•</span> integrate <span class="footer-sep">•</span> inspire{% endif %}</p>
+        <p class="footer-company">{% if is_arabic %}{{ company_name }} — حلول رقمية للمؤسسات{% else %}{{ company_name }} — enterprise digital solutions{% endif %}</p>
       </div>
       <div class="footer-links">
-        <p class="footer-heading">explore</p>
+        <p class="footer-heading">{% if is_arabic %}استكشف{% else %}explore{% endif %}</p>
         <ul>
-          <li><a href="{% url 'solutions' %}">solutions</a></li>
-          <li><a href="{% url 'industries' %}">industries</a></li>
-          <li><a href="{% url 'products' %}">products</a></li>
-          <li><a href="{% url 'contact' %}">contact us</a></li>
+          <li><a href="{% url 'solutions' %}">{% if is_arabic %}الحلول{% else %}solutions{% endif %}</a></li>
+          <li><a href="{% url 'industries' %}">{% if is_arabic %}القطاعات{% else %}industries{% endif %}</a></li>
+          <li><a href="{% url 'products' %}">{% if is_arabic %}المنتجات{% else %}products{% endif %}</a></li>
+          <li><a href="{% url 'contact' %}">{% if is_arabic %}تواصل معنا{% else %}contact us{% endif %}</a></li>
         </ul>
       </div>
       <div class="footer-contact">
-        <p class="footer-heading">connect</p>
+        <p class="footer-heading">{% if is_arabic %}تواصل{% else %}connect{% endif %}</p>
         <ul>
           <li><a href="https://www.visions-tek.com" rel="noopener noreferrer">www.visions-tek.com</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>&copy; {% now "Y" %} {{ company_name }}. All rights reserved.</p>
+      <p>&copy; {% now "Y" %} {{ company_name }}. {% if is_arabic %}جميع الحقوق محفوظة.{% else %}All rights reserved.{% endif %}</p>
     </div>
   </footer>
   <script src="{% static 'website/js/vt-animations.js' %}" defer></script>

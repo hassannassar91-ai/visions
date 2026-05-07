@@ -113,6 +113,28 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.5rem 1.35rem;
   justify-content: flex-end;
+  align-items: center;
+}
+
+.lang-tabs {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.4rem;
+  border: 1px solid rgba(0, 200, 255, 0.35);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-tab {
+  padding: 0.3rem 0.55rem;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(238, 245, 252, 0.84);
+}
+
+.lang-tab.is-active {
+  background: rgba(0, 200, 255, 0.28);
+  color: #fff;
 }
 
 .nav--iz a {
@@ -191,6 +213,24 @@ h2:not(.iz-h2):not(.iz-kicker) {
   direction: rtl;
   text-align: right;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+body.lang-en .ar,
+body.lang-en .ar-heading,
+body.lang-en .ar-label,
+body.lang-en .ar-body,
+body.lang-en .page-eyebrow-ar,
+body.lang-en .benefits-tag-ar,
+body.lang-en .cta-sub-ar {
+  display: none !important;
+}
+
+body.lang-ar {
+  direction: rtl;
+}
+
+body.lang-ar .en {
+  display: none !important;
 }
 
 p.ar {
