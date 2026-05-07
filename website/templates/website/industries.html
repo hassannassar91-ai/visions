@@ -5,9 +5,9 @@
 {% block content %}
 <section class="iz-page-hero">
   <div class="container wide iz-page-hero__inner">
-    <h1 class="iz-page-title vt-anim-inner">industry <span class="iz-page-title__accent">expertise</span></h1>
+    <h1 class="iz-page-title vt-anim-inner en">industry <span class="iz-page-title__accent">expertise</span></h1>
     <p class="ar page-eyebrow-ar vt-anim-inner">خبراتنا القطاعية</p>
-    <p class="iz-page-lead vt-anim-inner">Visions Tech serves organizations across diverse sectors where technology must deliver measurable business and service outcomes.</p>
+    <p class="iz-page-lead vt-anim-inner en">Visions Tech serves organizations across diverse sectors where technology must deliver measurable business and service outcomes.</p>
     <p class="iz-page-lead ar vt-anim-inner">تخدم Visions Tech مؤسسات في قطاعات متنوعة يكون فيها مطلوباً من التقنية تحقيق نتائج أعمال وخدمات قابلة للقياس.</p>
   </div>
 </section>
@@ -16,47 +16,47 @@
   <div class="container wide">
     <div class="industry-grid">
       <article class="card vt-reveal">
-        <h2>Government</h2>
+        <h2 class="en">Government</h2>
         <p class="ar section-sub">الحكومة</p>
-        <p>Enable digital public services, municipal systems, workflow automation, and integrated data environments for smarter governance.</p>
+        <p class="en">Enable digital public services, municipal systems, workflow automation, and integrated data environments for smarter governance.</p>
         <p class="ar">تمكين الخدمات الحكومية الرقمية، وأنظمة البلديات، وأتمتة الإجراءات، وبيئات البيانات المتكاملة لحوكمة أكثر ذكاءً.</p>
       </article>
       <article class="card vt-reveal" data-reveal-delay="50">
-        <h2>Healthcare</h2>
+        <h2 class="en">Healthcare</h2>
         <p class="ar section-sub">الرعاية الصحية</p>
-        <p>Support smarter operations, service visibility, data-driven decision-making, and digital experiences across healthcare institutions.</p>
+        <p class="en">Support smarter operations, service visibility, data-driven decision-making, and digital experiences across healthcare institutions.</p>
         <p class="ar">دعم عمليات أكثر ذكاءً، ورؤية تشغيلية أوضح، واتخاذ قرارات مبني على البيانات، وتجارب رقمية أفضل داخل المؤسسات الصحية.</p>
       </article>
       <article class="card vt-reveal" data-reveal-delay="100">
-        <h2>Banking &amp; Financial Services</h2>
+        <h2 class="en">Banking &amp; Financial Services</h2>
         <p class="ar section-sub">البنوك والخدمات المالية</p>
-        <p>Improve operational control, service efficiency, analytics readiness, and customer engagement through secure enterprise solutions.</p>
+        <p class="en">Improve operational control, service efficiency, analytics readiness, and customer engagement through secure enterprise solutions.</p>
         <p class="ar">تحسين الضبط التشغيلي، وكفاءة الخدمة، والجاهزية التحليلية، وتفاعل العملاء عبر حلول مؤسسية آمنة.</p>
       </article>
       <article class="card vt-reveal" data-reveal-delay="150">
-        <h2>Retail</h2>
+        <h2 class="en">Retail</h2>
         <p class="ar section-sub">التجزئة</p>
-        <p>Enable better demand visibility, customer intelligence, faster operations, and connected business applications.</p>
+        <p class="en">Enable better demand visibility, customer intelligence, faster operations, and connected business applications.</p>
         <p class="ar">تمكين رؤية أفضل للطلب، وذكاء أعلى للعملاء، وعمليات أسرع، وتطبيقات أعمال مترابطة.</p>
       </article>
       <article class="card vt-reveal" data-reveal-delay="200">
-        <h2>Manufacturing</h2>
+        <h2 class="en">Manufacturing</h2>
         <p class="ar section-sub">التصنيع</p>
-        <p>Support process optimization, inventory control, production visibility, and enterprise planning across manufacturing environments.</p>
+        <p class="en">Support process optimization, inventory control, production visibility, and enterprise planning across manufacturing environments.</p>
         <p class="ar">دعم تحسين العمليات، وضبط المخزون، ورؤية الإنتاج، والتخطيط المؤسسي عبر بيئات التصنيع.</p>
       </article>
       <article class="card vt-reveal" data-reveal-delay="250">
-        <h2>Logistics</h2>
+        <h2 class="en">Logistics</h2>
         <p class="ar section-sub">الخدمات اللوجستية</p>
-        <p>Strengthen planning, tracking, field operations, and service continuity through integrated systems and data visibility.</p>
+        <p class="en">Strengthen planning, tracking, field operations, and service continuity through integrated systems and data visibility.</p>
         <p class="ar">تعزيز التخطيط والتتبع والعمليات الميدانية واستمرارية الخدمة عبر أنظمة متكاملة ورؤية واضحة للبيانات.</p>
       </article>
     </div>
 
     <div class="cta-band cta-band--page vt-reveal" data-reveal-delay="120">
-      <h2>ready to accelerate your transformation?</h2>
+      <h2 class="en">ready to accelerate your transformation?</h2>
       <p class="ar">هل أنتم مستعدون لتسريع رحلة التحول؟</p>
-      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> book a consultation</a>
+      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> {% if is_arabic %}احجز استشارة{% else %}book a consultation{% endif %}</a>
       <p class="ar cta-sub-ar">احجز استشارة</p>
     </div>
   </div>

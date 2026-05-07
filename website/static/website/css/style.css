@@ -233,6 +233,10 @@ body.lang-ar .en {
   display: none !important;
 }
 
+body.lang-ar .list.checks {
+  display: none !important;
+}
+
 p.ar {
   color: var(--iz-muted);
   margin: 0.5rem 0 0;

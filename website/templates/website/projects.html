@@ -5,9 +5,9 @@
 {% block content %}
 <section class="iz-page-hero">
   <div class="container wide iz-page-hero__inner">
-    <h1 class="iz-page-title vt-anim-inner">projects <span class="iz-page-title__accent">&amp; impact</span></h1>
+    <h1 class="iz-page-title vt-anim-inner en">projects <span class="iz-page-title__accent">&amp; impact</span></h1>
     <p class="ar page-eyebrow-ar vt-anim-inner">المشاريع والأثر</p>
-    <p class="iz-page-lead vt-anim-inner">Visions Tech brings a practical, execution-focused approach to transformation initiatives, with experience shaped by complex regional projects and multi-sector implementation exposure.</p>
+    <p class="iz-page-lead vt-anim-inner en">Visions Tech brings a practical, execution-focused approach to transformation initiatives, with experience shaped by complex regional projects and multi-sector implementation exposure.</p>
     <p class="iz-page-lead ar vt-anim-inner">تقدم Visions Tech نهجاً عملياً يركز على التنفيذ في مبادرات التحول، بخبرة تشكلت من مشاريع إقليمية معقدة وتجارب متعددة القطاعات.</p>
   </div>
 </section>
@@ -15,7 +15,7 @@
 <section class="iz-section iz-section--soft iz-section--page">
   <div class="container wide">
     <div class="card vt-reveal">
-      <h2>What Our Projects Deliver</h2>
+      <h2 class="en">What Our Projects Deliver</h2>
       <p class="ar section-sub">ماذا تحقق مشاريعنا</p>
       <div class="two-col-lists">
         <ul class="list checks">
@@ -31,14 +31,14 @@
           <li>قرارات أقوى عبر التحليلات والرؤية الواضحة</li>
         </ul>
       </div>
-      <p class="text-block-top">Our delivery mindset is centered on measurable outcomes, execution discipline, and alignment with business priorities—timely delivery, budget discipline, and large-scale execution credibility in the region.</p>
+      <p class="text-block-top en">Our delivery mindset is centered on measurable outcomes, execution discipline, and alignment with business priorities—timely delivery, budget discipline, and large-scale execution credibility in the region.</p>
       <p class="ar">يرتكز نهجنا في التنفيذ على النتائج القابلة للقياس، والانضباط في التسليم، والمواءمة مع أولويات الأعمال، بما يشمل الالتزام بالوقت والميزانية والقدرة على تنفيذ مشاريع كبيرة في المنطقة.</p>
     </div>
 
     <div class="cta-band cta-band--page vt-reveal" data-reveal-delay="80">
-      <h2>ready to accelerate your transformation?</h2>
+      <h2 class="en">ready to accelerate your transformation?</h2>
       <p class="ar">هل أنتم مستعدون لتسريع رحلة التحول؟</p>
-      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> book a consultation</a>
+      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> {% if is_arabic %}احجز استشارة{% else %}book a consultation{% endif %}</a>
       <p class="ar cta-sub-ar">احجز استشارة</p>
     </div>
   </div>

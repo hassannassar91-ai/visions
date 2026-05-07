@@ -7,16 +7,16 @@
 <section class="iz-hero">
   <div class="container iz-hero__grid">
     <div class="iz-hero__copy">
-      <h1 class="iz-h1 vt-anim-hero">transforming business,<span class="iz-h1__accent"> through intelligent technology.</span></h1>
+      <h1 class="iz-h1 vt-anim-hero en">transforming business,<span class="iz-h1__accent"> through intelligent technology.</span></h1>
       <p class="ar iz-hero__ar-title vt-anim-hero">نقود الأعمال عبر تقنيات ذكية تصنع التحول</p>
-      <p class="iz-lead vt-anim-hero">Visions Tech delivers enterprise-grade digital transformation solutions that help organizations modernize operations, accelerate execution, and build scalable technology foundations for sustainable growth.</p>
+      <p class="iz-lead vt-anim-hero en">Visions Tech delivers enterprise-grade digital transformation solutions that help organizations modernize operations, accelerate execution, and build scalable technology foundations for sustainable growth.</p>
       <p class="iz-lead ar vt-anim-hero">تقدم Visions Tech حلول تحول رقمي بمستوى مؤسسي تساعد الجهات والشركات على تحديث عملياتها، وتسريع التنفيذ، وبناء أسس تقنية قابلة للتوسع لتحقيق نمو مستدام.</p>
       <p class="iz-hero__actions vt-anim-hero">
         <a class="btn btn-primary iz-btn" href="{% url 'solutions' %}">
           <span class="iz-btn__icon" aria-hidden="true">»</span>
-          explore our solutions
+          {% if is_arabic %}استعرض حلولنا{% else %}explore our solutions{% endif %}
         </a>
-        <a class="btn btn-ghost iz-btn-ghost" href="{% url 'contact' %}">contact us</a>
+        <a class="btn btn-ghost iz-btn-ghost" href="{% url 'contact' %}">{% if is_arabic %}تواصل معنا{% else %}contact us{% endif %}</a>
       </p>
     </div>
     <div class="iz-hero__visual vt-anim-hero vt-anim-hero--delay" aria-hidden="true">
@@ -43,18 +43,18 @@
   <div class="container">
     <div class="iz-trio">
       <article class="iz-trio__card vt-reveal" data-reveal-delay="0">
-        <h2 class="iz-kicker">accelerating transformation</h2>
-        <p>Operating across 14+ countries, we bring regional insight, implementation discipline, and multi-sector experience to complex transformation initiatives.</p>
+        <h2 class="iz-kicker en">accelerating transformation</h2>
+        <p class="en">Operating across 14+ countries, we bring regional insight, implementation discipline, and multi-sector experience to complex transformation initiatives.</p>
         <p class="ar iz-muted-ar">تعمل Visions Tech في أكثر من 14 دولة، وتجمع بين الفهم الإقليمي العميق والانضباط التنفيذي.</p>
       </article>
       <article class="iz-trio__card vt-reveal" data-reveal-delay="90">
-        <h2 class="iz-kicker">empowering people</h2>
-        <p>We combine strategic consulting, modern platforms, and execution readiness so teams can move faster with clarity and measurable outcomes.</p>
+        <h2 class="iz-kicker en">empowering people</h2>
+        <p class="en">We combine strategic consulting, modern platforms, and execution readiness so teams can move faster with clarity and measurable outcomes.</p>
         <p class="ar iz-muted-ar">ندمج الاستشارات الاستراتيجية مع المنصات الحديثة والجاهزية التشغيلية.</p>
       </article>
       <article class="iz-trio__card vt-reveal" data-reveal-delay="180">
-        <h2 class="iz-kicker">digital solutions for enterprises</h2>
-        <p>From fragmented systems to connected, intelligent ecosystems— we help you digitize services, automate processes, and scale with confidence.</p>
+        <h2 class="iz-kicker en">digital solutions for enterprises</h2>
+        <p class="en">From fragmented systems to connected, intelligent ecosystems— we help you digitize services, automate processes, and scale with confidence.</p>
         <p class="ar iz-muted-ar">من الأنظمة المتفرقة إلى منظومات رقمية مترابطة وذكية.</p>
       </article>
     </div>
@@ -64,42 +64,42 @@
 <section class="iz-section iz-section--soft">
   <div class="container iz-split-pair">
     <article class="iz-feature vt-reveal" data-reveal-delay="0">
-      <h2 class="iz-kicker">digital transformation</h2>
-      <p>Accelerate process automation, build modern applications faster, and digitize critical services with flexible low-code capabilities.</p>
+      <h2 class="iz-kicker en">digital transformation</h2>
+      <p class="en">Accelerate process automation, build modern applications faster, and digitize critical services with flexible low-code capabilities.</p>
       <p class="ar iz-muted-ar">تسريع أتمتة الإجراءات وبناء تطبيقات حديثة ورقمنة الخدمات الحيوية.</p>
-      <a class="iz-text-link" href="{% url 'solutions' %}">learn more</a>
+      <a class="iz-text-link" href="{% url 'solutions' %}">{% if is_arabic %}اعرف المزيد{% else %}learn more{% endif %}</a>
     </article>
     <article class="iz-feature vt-reveal" data-reveal-delay="120">
-      <h2 class="iz-kicker">digital infrastructure</h2>
-      <p>Design, deploy, secure, and optimize resilient infrastructure across cloud, data centers, networks, and cybersecurity layers.</p>
+      <h2 class="iz-kicker en">digital infrastructure</h2>
+      <p class="en">Design, deploy, secure, and optimize resilient infrastructure across cloud, data centers, networks, and cybersecurity layers.</p>
       <p class="ar iz-muted-ar">تصميم وتنفيذ وتأمين وتحسين بيئات تقنية مرنة.</p>
-      <a class="iz-text-link" href="{% url 'contact' %}">request a consultation</a>
+      <a class="iz-text-link" href="{% url 'contact' %}">{% if is_arabic %}اطلب استشارة{% else %}request a consultation{% endif %}</a>
     </article>
   </div>
 </section>
 
 <section class="iz-section">
   <div class="container iz-narrow vt-reveal">
-    <h2 class="iz-h2">redefining the way enterprises think, build, &amp; innovate</h2>
-    <p class="iz-body">We deliver integrated solutions that drive innovation, streamline decision-making, and improve operational efficiency—with deep technical expertise and agile delivery across consulting, deployment, support, and optimization.</p>
+    <h2 class="iz-h2 en">redefining the way enterprises think, build, &amp; innovate</h2>
+    <p class="iz-body en">We deliver integrated solutions that drive innovation, streamline decision-making, and improve operational efficiency—with deep technical expertise and agile delivery across consulting, deployment, support, and optimization.</p>
     <p class="iz-body ar">نقدم حلولاً متكاملة تدفع الابتكار وتبسط اتخاذ القرار وتحسن الكفاءة التشغيلية.</p>
   </div>
 </section>
 
 <section class="iz-section iz-section--tint">
   <div class="container">
-    <h2 class="iz-h2 iz-h2--center vt-reveal">our industry expertise</h2>
-    <p class="iz-subcenter vt-reveal" data-reveal-delay="60">Visions Tech serves organizations across sectors where technology must deliver measurable outcomes.</p>
+    <h2 class="iz-h2 iz-h2--center vt-reveal en">our industry expertise</h2>
+    <p class="iz-subcenter vt-reveal en" data-reveal-delay="60">Visions Tech serves organizations across sectors where technology must deliver measurable outcomes.</p>
     <div class="iz-industry-grid vt-reveal" data-reveal-delay="120">
-      <span class="iz-industry-pill">government &amp; public sector</span>
-      <span class="iz-industry-pill">healthcare</span>
-      <span class="iz-industry-pill">banking &amp; financial services</span>
-      <span class="iz-industry-pill">retail</span>
-      <span class="iz-industry-pill">manufacturing</span>
-      <span class="iz-industry-pill">logistics</span>
+      <span class="iz-industry-pill en">government &amp; public sector</span>
+      <span class="iz-industry-pill en">healthcare</span>
+      <span class="iz-industry-pill en">banking &amp; financial services</span>
+      <span class="iz-industry-pill en">retail</span>
+      <span class="iz-industry-pill en">manufacturing</span>
+      <span class="iz-industry-pill en">logistics</span>
     </div>
     <p class="iz-center-action vt-reveal" data-reveal-delay="200">
-      <a class="btn btn-primary iz-btn" href="{% url 'industries' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> discover industries</a>
+      <a class="btn btn-primary iz-btn" href="{% url 'industries' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> {% if is_arabic %}اكتشف القطاعات{% else %}discover industries{% endif %}</a>
     </p>
   </div>
 </section>
@@ -109,27 +109,27 @@
     <div class="iz-stats">
       <div class="iz-stat vt-reveal" data-reveal-delay="0">
         <span class="iz-stat__num">14</span><span class="iz-stat__suffix">+</span>
-        <span class="iz-stat__label">countries presence</span>
+        <span class="iz-stat__label en">countries presence</span>
       </div>
       <div class="iz-stat vt-reveal" data-reveal-delay="50">
         <span class="iz-stat__num">4</span>
-        <span class="iz-stat__label">core solution pillars</span>
+        <span class="iz-stat__label en">core solution pillars</span>
       </div>
       <div class="iz-stat vt-reveal" data-reveal-delay="100">
         <span class="iz-stat__num">100</span><span class="iz-stat__suffix">%</span>
-        <span class="iz-stat__label">focus on outcomes</span>
+        <span class="iz-stat__label en">focus on outcomes</span>
       </div>
       <div class="iz-stat vt-reveal" data-reveal-delay="150">
         <span class="iz-stat__num">3</span>
-        <span class="iz-stat__label">key product platforms</span>
+        <span class="iz-stat__label en">key product platforms</span>
       </div>
       <div class="iz-stat vt-reveal" data-reveal-delay="200">
         <span class="iz-stat__num">∞</span>
-        <span class="iz-stat__label">scale-ready architecture</span>
+        <span class="iz-stat__label en">scale-ready architecture</span>
       </div>
       <div class="iz-stat vt-reveal" data-reveal-delay="250">
         <span class="iz-stat__num">24</span><span class="iz-stat__suffix">/7</span>
-        <span class="iz-stat__label">delivery mindset</span>
+        <span class="iz-stat__label en">delivery mindset</span>
       </div>
     </div>
   </div>
@@ -137,11 +137,11 @@
 
 <section class="iz-section iz-section--soft">
   <div class="container iz-narrow vt-reveal">
-    <h2 class="iz-h2">become a leader in the digital realm</h2>
-    <p class="iz-body">Digital transformation is about lasting impact for your people and your business—working smarter, faster, and more meaningfully. Whether you are modernizing legacy systems or unlocking new opportunities, we help make change clear, disciplined, and aligned with your priorities.</p>
+    <h2 class="iz-h2 en">become a leader in the digital realm</h2>
+    <p class="iz-body en">Digital transformation is about lasting impact for your people and your business—working smarter, faster, and more meaningfully. Whether you are modernizing legacy systems or unlocking new opportunities, we help make change clear, disciplined, and aligned with your priorities.</p>
     <p class="iz-body ar">التحول الرقمي يعني أثراً مستداماً لأفرادكم وأعمالكم—العمل بذكاء وسرعة وبمعنى أكبر.</p>
     <p class="iz-center-action">
-      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> start this journey</a>
+      <a class="btn btn-primary iz-btn" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> {% if is_arabic %}ابدأ هذه الرحلة{% else %}start this journey{% endif %}</a>
     </p>
   </div>
 </section>
@@ -149,32 +149,32 @@
 <section class="iz-section">
   <div class="container">
     <div class="iz-solutions-head vt-reveal">
-      <h2 class="iz-h2 iz-h2--center">integrated solutions</h2>
+      <h2 class="iz-h2 iz-h2--center en">integrated solutions</h2>
       <p class="iz-subcenter ar">حلول متكاملة للمؤسسات الحديثة</p>
     </div>
     <div class="grid-4 iz-cards">
       <article class="card iz-card vt-reveal" data-reveal-delay="0">
-        <h3>Digital Transformation</h3>
+        <h3 class="en">Digital Transformation</h3>
         <h3 class="ar-heading ar">التحول الرقمي</h3>
-        <p>Low-code acceleration, modern applications, and digitized services.</p>
+        <p class="en">Low-code acceleration, modern applications, and digitized services.</p>
         <p class="ar">تسريع الأتمتة والتطبيقات الحديثة والرقمنة.</p>
       </article>
       <article class="card iz-card vt-reveal" data-reveal-delay="70">
-        <h3>Big Data &amp; AI</h3>
+        <h3 class="en">Big Data &amp; AI</h3>
         <h3 class="ar-heading ar">البيانات والذكاء الصناعي</h3>
-        <p>Operational intelligence, predictive insight, and analytics platforms.</p>
+        <p class="en">Operational intelligence, predictive insight, and analytics platforms.</p>
         <p class="ar">ذكاء تشغيلي ورؤى تنبؤية وتحليلات.</p>
       </article>
       <article class="card iz-card vt-reveal" data-reveal-delay="140">
-        <h3>Digital Infrastructure</h3>
+        <h3 class="en">Digital Infrastructure</h3>
         <h3 class="ar-heading ar">البنية التحتية الرقمية</h3>
-        <p>Cloud, data center, network, and cyber resilience.</p>
+        <p class="en">Cloud, data center, network, and cyber resilience.</p>
         <p class="ar">السحابة والشبكات والأمن السيبراني.</p>
       </article>
       <article class="card iz-card vt-reveal" data-reveal-delay="210">
-        <h3>ERP &amp; Applications</h3>
+        <h3 class="en">ERP &amp; Applications</h3>
         <h3 class="ar-heading ar">ERP وتطبيقات الأعمال</h3>
-        <p>Unify finance, HR, supply chain, and operations.</p>
+        <p class="en">Unify finance, HR, supply chain, and operations.</p>
         <p class="ar">توحيد المالية والموارد البشرية والعمليات.</p>
       </article>
     </div>
@@ -183,10 +183,10 @@
 
 <section class="iz-section iz-cta-final vt-reveal">
   <div class="container iz-cta-final__inner">
-    <h2 class="iz-h2 iz-h2--light">ready to accelerate your transformation?</h2>
+    <h2 class="iz-h2 iz-h2--light en">ready to accelerate your transformation?</h2>
     <p class="iz-cta-final__ar ar">هل أنتم مستعدون لتسريع رحلة التحول؟</p>
-    <p class="iz-cta-final__text">Talk to our team about your goals and challenges—we will help you define the right path with clarity and speed.</p>
-    <a class="btn btn-primary iz-btn iz-btn--on-dark" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> book a consultation</a>
+    <p class="iz-cta-final__text en">Talk to our team about your goals and challenges—we will help you define the right path with clarity and speed.</p>
+    <a class="btn btn-primary iz-btn iz-btn--on-dark" href="{% url 'contact' %}"><span class="iz-btn__icon" aria-hidden="true">»</span> {% if is_arabic %}احجز استشارة{% else %}book a consultation{% endif %}</a>
     <p class="ar iz-cta-final__hint">احجز استشارة</p>
   </div>
 </section>
