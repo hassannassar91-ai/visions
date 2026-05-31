@@ -1,11 +1,18 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
+from django.utils.http import url_has_allowed_host_and_scheme
 
 
 def set_language(request):
     lang = (request.GET.get("lang") or "en").lower()
     request.session["site_language"] = "ar" if lang == "ar" else "en"
     next_url = request.GET.get("next") or request.META.get("HTTP_REFERER") or "/"
+    if not url_has_allowed_host_and_scheme(
+        next_url,
+        allowed_hosts={request.get_host()},
+        require_https=request.is_secure(),
+    ):
+        next_url = "/"
     return redirect(next_url)
 
 

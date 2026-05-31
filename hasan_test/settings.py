@@ -38,6 +38,10 @@ if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
+# Language preference only; avoid DB session writes (fixes 500 when django_session is missing).
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
