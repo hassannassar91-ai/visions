@@ -96,12 +96,15 @@ a:hover {
 }
 
 .logo__img {
-  height: 52px;
+  height: 48px;
   width: auto;
-  max-width: min(240px, 55vw);
+  max-width: min(320px, 62vw);
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 0 20px rgba(0, 200, 255, 0.15));
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .logo--img:hover .logo__img {
@@ -1147,10 +1150,14 @@ p.ar {
 }
 
 .footer-logo {
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   display: block;
   width: auto;
   height: 48px;
-  max-width: 200px;
+  max-width: min(280px, 85vw);
   object-fit: contain;
   margin-bottom: 1rem;
   filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.2));
