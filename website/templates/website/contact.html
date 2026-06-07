@@ -3,69 +3,77 @@
 {% block title %}Contact — {{ company_name }}{% endblock %}
 
 {% block content %}
-<section class="iz-page-hero">
-  <div class="container wide iz-page-hero__inner">
-    <h1 class="iz-page-title vt-anim-inner en">let’s build your <span class="iz-page-title__accent">transformation</span> journey</h1>
-    <p class="ar page-eyebrow-ar vt-anim-inner">دعونا نبني رحلة التحول الخاصة بكم</p>
-    <p class="iz-page-lead vt-anim-inner en">Whether you are exploring ERP, digital transformation, AI, or enterprise infrastructure, our team is ready to discuss your goals and recommend the right path forward.</p>
-    <p class="iz-page-lead ar vt-anim-inner">سواء كنتم تدرسون ERP أو التحول الرقمي أو الذكاء الصناعي أو البنية التحتية المؤسسية، فإن فريقنا جاهز لمناقشة أهدافكم واقتراح المسار الأنسب للمضي قدماً.</p>
-  </div>
-</section>
+{% include "website/partials/_page_hero.html" with eyebrow_en="Get in touch" eyebrow_ar="تواصل معنا" title_en="Let's build your <span class=\"vt-heading-accent\">transformation</span> journey" title_ar="دعونا نبني رحلة <span class=\"vt-heading-accent\">التحول</span> الخاصة بكم" lead_en="Whether you are exploring ERP, digital transformation, AI, or enterprise infrastructure, our team is ready to discuss your goals and recommend the right path forward." lead_ar="سواء كنتم تدرسون ERP أو التحول الرقمي أو الذكاء الصناعي أو البنية التحتية المؤسسية، فإن فريقنا جاهز لمناقشة أهدافكم واقتراح المسار الأنسب للمضي قدماً." %}
 
-<section class="iz-section iz-section--soft iz-section--page">
-  <div class="container wide">
-    <div class="contact-layout">
-      <form class="contact-form card vt-reveal" method="post" action="{% url 'contact' %}">
+<section class="vt-section-light py-16 sm:py-20">
+  <div class="vt-container-wide">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <form class="vt-card vt-reveal" method="post" action="{% url 'contact' %}" data-contact-form novalidate>
         {% csrf_token %}
-        <h2 class="contact-form__title">{% if is_arabic %}أرسل رسالة{% else %}send a message{% endif %}</h2>
-        <p class="ar section-sub contact-form__title-ar">أرسل رسالة</p>
-        <label for="id_name">
-          {% if is_arabic %}الاسم الكامل{% else %}Full Name{% endif %}
-          <span class="ar-label ar">الاسم الكامل</span>
-        </label>
-        <input id="id_name" name="name" type="text" autocomplete="name" required>
+        <h2 class="text-2xl font-bold text-vt-navy-900">{% if is_arabic %}أرسل رسالة{% else %}Send a message{% endif %}</h2>
 
-        <label for="id_email">
-          {% if is_arabic %}البريد الإلكتروني{% else %}Email Address{% endif %}
-          <span class="ar-label ar">البريد الإلكتروني</span>
-        </label>
-        <input id="id_email" name="email" type="email" autocomplete="email" required>
+        <div class="mt-6 space-y-4">
+          <div>
+            <label class="vt-form-label" for="id_name">{% if is_arabic %}الاسم الكامل{% else %}Full name{% endif %} <span class="text-red-500">*</span></label>
+            <input class="vt-form-input" id="id_name" name="name" type="text" autocomplete="name" required aria-required="true">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_email">{% if is_arabic %}البريد الإلكتروني{% else %}Email address{% endif %} <span class="text-red-500">*</span></label>
+            <input class="vt-form-input" id="id_email" name="email" type="email" autocomplete="email" required aria-required="true">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_company">{% if is_arabic %}اسم الشركة{% else %}Company name{% endif %}</label>
+            <input class="vt-form-input" id="id_company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_phone">{% if is_arabic %}رقم الهاتف{% else %}Phone number{% endif %}</label>
+            <input class="vt-form-input" id="id_phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div>
+            <label class="vt-form-label" for="id_message">{% if is_arabic %}الرسالة{% else %}Message{% endif %} <span class="text-red-500">*</span></label>
+            <textarea class="vt-form-input min-h-[132px] py-3" id="id_message" name="message" rows="5" required aria-required="true"></textarea>
+          </div>
+        </div>
 
-        <label for="id_company">
-          {% if is_arabic %}اسم الشركة{% else %}Company Name{% endif %}
-          <span class="ar-label ar">اسم الشركة</span>
-        </label>
-        <input id="id_company" name="company" type="text" autocomplete="organization">
-
-        <label for="id_phone">
-          {% if is_arabic %}رقم الهاتف{% else %}Phone Number{% endif %}
-          <span class="ar-label ar">رقم الهاتف</span>
-        </label>
-        <input id="id_phone" name="phone" type="tel" autocomplete="tel">
-
-        <label for="id_message">
-          {% if is_arabic %}الرسالة{% else %}Message{% endif %}
-          <span class="ar-label ar">الرسالة</span>
-        </label>
-        <textarea id="id_message" name="message" rows="5" required></textarea>
-
-        <button class="btn btn-primary iz-btn" type="submit">{% if is_arabic %}إرسال الرسالة{% else %}send message{% endif %}</button>
+        <button class="vt-btn-primary-light mt-6 w-full sm:w-auto" type="submit">
+          {% if is_arabic %}إرسال الرسالة{% else %}Send message{% endif %}
+        </button>
       </form>
 
-      <div class="contact-details card vt-reveal" data-reveal-delay="100">
-        <h2>{% if is_arabic %}مكاتبنا{% else %}Our Offices{% endif %}</h2>
-        <p class="ar section-sub">مكاتبنا</p>
-        <p class="en"><strong>Head Office:</strong> 7th Circle, Amman, Hashemite Kingdom of Jordan</p>
-        <p class="ar"><strong>المكتب الرئيسي:</strong> الدوار السابع، عمّان، المملكة الأردنية الهاشمية</p>
-        <p class="en"><strong>Regional Office, Oman:</strong> Al Athaiba, Muscat, Sultanate of Oman</p>
-        <p class="ar"><strong>المكتب الإقليمي، عُمان:</strong> العذيبة، مسقط، سلطنة عُمان</p>
-        <p class="en"><strong>Regional Office, Syria:</strong> Al Mazzeh, Damascus, Syrian Arab Republic</p>
-        <p class="ar"><strong>المكتب الإقليمي، سوريا:</strong> المزة، دمشق، الجمهورية العربية السورية</p>
-        <p class="en"><strong>Website:</strong> <a href="https://www.visions-tek.com" rel="noopener noreferrer">www.visions-tek.com</a></p>
-        <p class="ar"><strong>الموقع الإلكتروني:</strong> <a href="https://www.visions-tek.com" dir="ltr">www.visions-tek.com</a></p>
+      <div class="space-y-6">
+        <article class="vt-card vt-reveal" data-reveal-delay="100">
+          <h2 class="text-2xl font-bold text-vt-navy-900">{% if is_arabic %}مكاتبنا{% else %}Our offices{% endif %}</h2>
+          <div class="mt-6 space-y-6">
+            <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+              <p class="font-semibold text-vt-navy-900 en">Head Office — Jordan</p>
+              <p class="font-semibold text-vt-navy-900 ar">المكتب الرئيسي — الأردن</p>
+              <p class="en mt-2 text-sm text-vt-muted">7th Circle, Amman, Hashemite Kingdom of Jordan</p>
+              <p class="ar mt-2 text-sm text-vt-muted">الدوار السابع، عمّان، المملكة الأردنية الهاشمية</p>
+              <a href="https://maps.google.com/?q=7th+Circle+Amman+Jordan" class="vt-text-link mt-3" rel="noopener noreferrer" target="_blank">{% if is_arabic %}عرض على الخريطة{% else %}View on map{% endif %}</a>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+              <p class="font-semibold text-vt-navy-900 en">Regional Office — Oman</p>
+              <p class="font-semibold text-vt-navy-900 ar">المكتب الإقليمي — عُمان</p>
+              <p class="en mt-2 text-sm text-vt-muted">Al Athaiba, Muscat, Sultanate of Oman</p>
+              <p class="ar mt-2 text-sm text-vt-muted">العذيبة، مسقط، سلطنة عُمان</p>
+              <a href="https://maps.google.com/?q=Al+Athaiba+Muscat+Oman" class="vt-text-link mt-3" rel="noopener noreferrer" target="_blank">{% if is_arabic %}عرض على الخريطة{% else %}View on map{% endif %}</a>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-vt-surface p-4">
+              <p class="font-semibold text-vt-navy-900 en">Regional Office — Syria</p>
+              <p class="font-semibold text-vt-navy-900 ar">المكتب الإقليمي — سوريا</p>
+              <p class="en mt-2 text-sm text-vt-muted">Al Mazzeh, Damascus, Syrian Arab Republic</p>
+              <p class="ar mt-2 text-sm text-vt-muted">المزة، دمشق، الجمهورية العربية السورية</p>
+              <a href="https://maps.google.com/?q=Al+Mazzeh+Damascus" class="vt-text-link mt-3" rel="noopener noreferrer" target="_blank">{% if is_arabic %}عرض على الخريطة{% else %}View on map{% endif %}</a>
+            </div>
+            <p class="text-sm text-vt-muted">
+              <strong class="text-vt-navy-900">{% if is_arabic %}الموقع:{% else %}Website:{% endif %}</strong>
+              <a href="https://www.visions-tek.com" class="vt-text-link ms-1" rel="noopener noreferrer" dir="ltr">www.visions-tek.com</a>
+            </p>
+          </div>
+        </article>
       </div>
     </div>
-    <p class="hint hint--contact">{% if is_arabic %}هذا النموذج يعرض رسالة نجاح فقط. لإرسال بريد فعلي، قم بإعداد إعدادات البريد في Django أو اربط خدمة بريد لاحقًا.{% else %}This form shows a success message only. To send email, configure Django email settings or connect a service later.{% endif %}</p>
+    <p class="mt-8 text-center text-sm text-vt-muted">{% if is_arabic %}هذا النموذج يعرض رسالة نجاح فقط. لإرسال بريد فعلي، قم بإعداد إعدادات البريد في Django أو اربط خدمة بريد لاحقًا.{% else %}This form shows a success message only. To send email, configure Django email settings or connect a service later.{% endif %}</p>
   </div>
 </section>
 {% endblock %}

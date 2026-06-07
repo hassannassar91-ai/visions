@@ -5,97 +5,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ company_name }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% if is_arabic %}Visions Tech — حلول تحول رقمي مؤسسية عبر المنطقة{% else %}Visions Tech — enterprise digital transformation solutions across the region{% endif %}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{{ company_name }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% if is_arabic %}نبتكر • ندمج • نُلهم — حلول تقنية للمؤسسات{% else %}Innovate • Integrate • Inspire — enterprise technology solutions{% endif %}{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{% static 'website/images/visions-tech-logo.png' %}">
+  <link rel="icon" href="{% static 'website/images/visions-tech-icon.png' %}" type="image/png">
+  <link rel="apple-touch-icon" href="{% static 'website/images/visions-tech-icon.png' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'website/css/site.css' %}">
 </head>
 <body class="{% if is_arabic %}lang-ar{% else %}lang-en{% endif %}">
-  <header class="site-header vt-header-enter">
-    <div class="container header-inner">
-      <a class="logo logo--img" href="{% url 'home' %}">
-        <img
-          src="{% static 'website/images/visions-tech-logo.png' %}"
-          alt="{{ company_name }}"
-          class="logo__img"
-          width="320"
-          height="51"
-          decoding="async"
-          fetchpriority="high"
-        >
-      </a>
-      <nav class="nav nav--iz" aria-label="Main">
-        {% if is_arabic %}
-        <a href="{% url 'home' %}">الرئيسية</a>
-        <a href="{% url 'about' %}">من نحن</a>
-        <a href="{% url 'solutions' %}">الحلول</a>
-        <a href="{% url 'industries' %}">القطاعات</a>
-        <a href="{% url 'products' %}">المنتجات</a>
-        <a href="{% url 'projects' %}">المشاريع</a>
-        <a href="{% url 'contact' %}">تواصل معنا</a>
-        {% else %}
-        <a href="{% url 'home' %}">home</a>
-        <a href="{% url 'about' %}">about us</a>
-        <a href="{% url 'solutions' %}">solutions</a>
-        <a href="{% url 'industries' %}">industries</a>
-        <a href="{% url 'products' %}">products</a>
-        <a href="{% url 'projects' %}">projects</a>
-        <a href="{% url 'contact' %}">contact us</a>
-        {% endif %}
-        <div class="lang-tabs" role="group" aria-label="Language switch">
-          <a class="lang-tab {% if not is_arabic %}is-active{% endif %}" href="{% url 'set_language' %}?lang=en&next={{ request.get_full_path|urlencode }}">EN</a>
-          <a class="lang-tab {% if is_arabic %}is-active{% endif %}" href="{% url 'set_language' %}?lang=ar&next={{ request.get_full_path|urlencode }}">AR</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-vt-cyan focus:px-4 focus:py-2 focus:text-vt-navy-950">
+    {% if is_arabic %}انتقل إلى المحتوى{% else %}Skip to main content{% endif %}
+  </a>
+
+  {% include "website/partials/_header.html" %}
+  {% include "website/partials/_mobile_nav.html" %}
 
   {% if messages %}
-    <div class="container messages" role="status">
-      {% for message in messages %}
-        <p class="message message-{{ message.tags }}">{{ message }}</p>
-      {% endfor %}
-    </div>
+  <div class="vt-container pt-24" role="status" aria-live="polite">
+    {% for message in messages %}
+    <p class="mb-2 rounded-lg px-4 py-3 text-sm {% if message.tags == 'error' %}bg-red-100 text-red-800{% else %}bg-green-100 text-green-800{% endif %}">{{ message }}</p>
+    {% endfor %}
+  </div>
   {% endif %}
 
-  <main class="main">
+  <main id="main-content" class="flex-1">
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="site-footer site-footer--iz">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img
-          src="{% static 'website/images/visions-tech-logo.png' %}"
-          alt=""
-          class="footer-logo"
-          width="240"
-          height="38"
-          decoding="async"
-        >
-        <p class="footer-tagline">{% if is_arabic %}نبتكر <span class="footer-sep">•</span> ندمج <span class="footer-sep">•</span> نُلهم{% else %}innovate <span class="footer-sep">•</span> integrate <span class="footer-sep">•</span> inspire{% endif %}</p>
-        <p class="footer-company">{% if is_arabic %}{{ company_name }} — حلول رقمية للمؤسسات{% else %}{{ company_name }} — enterprise digital solutions{% endif %}</p>
-      </div>
-      <div class="footer-links">
-        <p class="footer-heading">{% if is_arabic %}استكشف{% else %}explore{% endif %}</p>
-        <ul>
-          <li><a href="{% url 'solutions' %}">{% if is_arabic %}الحلول{% else %}solutions{% endif %}</a></li>
-          <li><a href="{% url 'industries' %}">{% if is_arabic %}القطاعات{% else %}industries{% endif %}</a></li>
-          <li><a href="{% url 'products' %}">{% if is_arabic %}المنتجات{% else %}products{% endif %}</a></li>
-          <li><a href="{% url 'contact' %}">{% if is_arabic %}تواصل معنا{% else %}contact us{% endif %}</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <p class="footer-heading">{% if is_arabic %}تواصل{% else %}connect{% endif %}</p>
-        <ul>
-          <li><a href="https://www.visions-tek.com" rel="noopener noreferrer">www.visions-tek.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>&copy; {% now "Y" %} {{ company_name }}. {% if is_arabic %}جميع الحقوق محفوظة.{% else %}All rights reserved.{% endif %}</p>
-    </div>
-  </footer>
+  {% include "website/partials/_footer.html" %}
+
+  <script src="{% static 'website/js/vt-nav.js' %}" defer></script>
   <script src="{% static 'website/js/vt-animations.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
 </body>
 </html>

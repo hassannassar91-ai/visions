@@ -35,9 +35,48 @@
     });
   }
 
+  function initContactForm() {
+    var form = document.querySelector("[data-contact-form]");
+    if (!form) return;
+
+    form.addEventListener("submit", function () {
+      var btn = form.querySelector("[type='submit']");
+      if (btn) {
+        btn.disabled = true;
+        btn.setAttribute("aria-busy", "true");
+      }
+    });
+
+    var fields = form.querySelectorAll("input[required], textarea[required]");
+    fields.forEach(function (field) {
+      field.addEventListener("blur", function () {
+        var errorId = field.id + "-error";
+        var existing = document.getElementById(errorId);
+        if (field.validity.valid) {
+          if (existing) existing.remove();
+          field.removeAttribute("aria-invalid");
+          return;
+        }
+        if (!existing) {
+          existing = document.createElement("p");
+          existing.id = errorId;
+          existing.className = "vt-form-error";
+          existing.setAttribute("role", "alert");
+          field.parentNode.appendChild(existing);
+        }
+        existing.textContent = field.validationMessage;
+        field.setAttribute("aria-invalid", "true");
+      });
+    });
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initReveal);
+    document.addEventListener("DOMContentLoaded", function () {
+      initReveal();
+      initContactForm();
+    });
   } else {
     initReveal();
+    initContactForm();
   }
 })();
