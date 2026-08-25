@@ -1,7 +1,37 @@
 # Deploy: Render Dashboard → New → Blueprint → connect this repo.
-# Custom domain: droobtech.sa (DNS configured in Sahara Net panel).
+# Two web services from one repo; SITE_BRAND selects which site each instance serves.
 
 services:
+  - type: web
+    runtime: python
+    name: visions-tek-web
+    plan: starter
+    buildCommand: bash build.sh
+    startCommand: gunicorn hasan_test.wsgi:application --bind 0.0.0.0:$PORT
+    healthCheckPath: /
+    domains:
+      - visions-tek.com
+      - www.visions-tek.com
+    envVars:
+      - key: SITE_BRAND
+        value: visions-tech
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: visions-tek-web.onrender.com,visions-tek.com,www.visions-tek.com
+      - key: DJANGO_CSRF_TRUSTED_ORIGINS
+        value: https://visions-tek-web.onrender.com,https://visions-tek.com,https://www.visions-tek.com
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: visions-db
+          property: connectionString
+
   - type: web
     runtime: python
     name: droobtech
@@ -13,6 +43,8 @@ services:
       - droobtech.sa
       - www.droobtech.sa
     envVars:
+      - key: SITE_BRAND
+        value: droobtech
       - key: PYTHON_VERSION
         value: 3.12.8
       - key: NODE_VERSION
@@ -31,5 +63,7 @@ services:
           property: connectionString
 
 databases:
+  - name: visions-db
+    plan: free
   - name: droobtech-db
     plan: free

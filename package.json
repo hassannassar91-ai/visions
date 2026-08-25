@@ -1,9 +1,10 @@
 {
-  "name": "droobtech-web",
+  "name": "hasan-test-web",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i droobtech/static/droobtech/css/src/input.css -o droobtech/static/droobtech/css/site.css --minify",
-    "build:css:vt": "tailwindcss -i website/static/website/css/src/input.css -o website/static/website/css/site.css --minify",
+    "build:css": "npm run build:css:droobtech && npm run build:css:visions",
+    "build:css:droobtech": "tailwindcss -i droobtech/static/droobtech/css/src/input.css -o droobtech/static/droobtech/css/site.css --minify",
+    "build:css:visions": "tailwindcss -i website/static/website/css/src/input.css -o website/static/website/css/site.css --minify",
     "watch:css": "tailwindcss -i droobtech/static/droobtech/css/src/input.css -o droobtech/static/droobtech/css/site.css --watch"
   },
   "devDependencies": {

@@ -1,25 +1,27 @@
 """
 URL configuration for hasan_test project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+Each Render web service sets SITE_BRAND to select which site this instance serves:
+  - visions-tech  → Visions Tech (visions-tek.com)
+  - droobtech     → DroobTech Holding (droobtech.sa)
 """
+import os
+
 from django.contrib import admin
 from django.urls import include, path
 
-handler404 = "droobtech.views.page_not_found"
+SITE_BRAND = os.environ.get("SITE_BRAND", "droobtech").strip().lower()
+if SITE_BRAND not in ("droobtech", "visions-tech"):
+    SITE_BRAND = "droobtech"
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('droobtech.urls')),
-]
+if SITE_BRAND == "visions-tech":
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path("", include("website.urls")),
+    ]
+else:
+    handler404 = "droobtech.views.page_not_found"
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path("", include("droobtech.urls")),
+    ]

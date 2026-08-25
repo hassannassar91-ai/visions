@@ -16,10 +16,27 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes")
 
-DEFAULT_PROD_DOMAINS = [
-    "droobtech.sa",
-    "www.droobtech.sa",
-]
+SITE_BRAND = os.environ.get("SITE_BRAND", "droobtech").strip().lower()
+if SITE_BRAND not in ("droobtech", "visions-tech"):
+    SITE_BRAND = "droobtech"
+
+SITE_DEFAULT_DOMAINS = {
+    "droobtech": ["droobtech.sa", "www.droobtech.sa"],
+    "visions-tech": ["visions-tek.com", "www.visions-tek.com"],
+}
+
+DEFAULT_PROD_DOMAINS = SITE_DEFAULT_DOMAINS[SITE_BRAND]
+
+SITE_CONTEXT_PROCESSORS = {
+    "droobtech": [
+        "droobtech.context_processors.company",
+        "droobtech.context_processors.language",
+    ],
+    "visions-tech": [
+        "website.context_processors.company",
+        "website.context_processors.language",
+    ],
+}
 
 _allowed = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
 if _allowed:
@@ -76,8 +93,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "droobtech.context_processors.company",
-                "droobtech.context_processors.language",
+                *SITE_CONTEXT_PROCESSORS[SITE_BRAND],
             ],
         },
     },
