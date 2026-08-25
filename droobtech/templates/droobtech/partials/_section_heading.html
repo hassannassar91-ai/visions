@@ -1,0 +1,11 @@
+<div class="mb-10 text-center dt-reveal">
+  {% if eyebrow_en or eyebrow_ar %}
+  <p class="dt-tagline mb-3">{% if is_arabic %}{{ eyebrow_ar|default:eyebrow_en }}{% else %}{{ eyebrow_en }}{% endif %}</p>
+  {% endif %}
+  <h2 class="text-3xl font-bold text-dt-navy-900 sm:text-4xl">
+    {% if title_en %}<span class="en">{{ title_en|safe }}</span>{% endif %}
+    {% if title_ar %}<span class="ar">{{ title_ar|safe }}</span>{% endif %}
+  </h2>
+  {% if lead_en %}<p class="en mx-auto mt-4 max-w-3xl text-dt-muted">{{ lead_en }}</p>{% endif %}
+  {% if lead_ar %}<p class="ar mx-auto mt-4 max-w-3xl text-dt-muted">{{ lead_ar }}</p>{% endif %}
+</div>

@@ -1,0 +1,38 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Why DroobTech — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="One Partner. Multiple Technology Capabilities. One Objective: <span class=\"dt-heading-accent\">Business Value</span>." title_ar="شريك واحد. قدرات تقنية متعددة. هدف واحد، <span class=\"dt-heading-accent\">قيمة الأعمال</span>." %}
+
+<section class="dt-section-alt py-16">
+  <div class="dt-container grid gap-6 md:grid-cols-2">
+    <article class="dt-card dt-reveal">
+      <h2 class="font-bold text-dt-navy-900 en">Business-First Approach</h2>
+      <h2 class="font-bold text-dt-navy-900 ar">منهج يبدأ بالأعمال</h2>
+      <p class="en mt-2 text-sm text-dt-muted">We start with the business requirement and desired outcome, not a predetermined product.</p>
+      <p class="ar mt-2 text-sm text-dt-muted">نبدأ بمتطلبات الأعمال والنتيجة المستهدفة، وليس بمنتج محدد مسبقاً.</p>
+    </article>
+    <article class="dt-card dt-reveal">
+      <h2 class="font-bold text-dt-navy-900 en">Multi-Technology Capability</h2>
+      <h2 class="font-bold text-dt-navy-900 ar">قدرات تقنية متعددة</h2>
+      <p class="en mt-2 text-sm text-dt-muted">Digital transformation, enterprise technology, digital solutions, data engineering, analytics, AI and integration within one ecosystem.</p>
+      <p class="ar mt-2 text-sm text-dt-muted">التحول الرقمي وتقنيات المؤسسات والحلول الرقمية وهندسة البيانات والتحليلات والذكاء الاصطناعي والتكامل ضمن منظومة واحدة.</p>
+    </article>
+    <article class="dt-card dt-reveal">
+      <h2 class="font-bold text-dt-navy-900 en">Integration-First Thinking</h2>
+      <h2 class="font-bold text-dt-navy-900 ar">التكامل أولاً</h2>
+      <p class="en mt-2 text-sm text-dt-muted">Build around existing technology investments where they continue to create business value.</p>
+      <p class="ar mt-2 text-sm text-dt-muted">نبني حول الاستثمارات التقنية القائمة عندما تستمر في تحقيق قيمة للأعمال.</p>
+    </article>
+    <article class="dt-card dt-reveal">
+      <h2 class="font-bold text-dt-navy-900 en">Knowledge Transfer</h2>
+      <h2 class="font-bold text-dt-navy-900 ar">نقل المعرفة</h2>
+      <p class="en mt-2 text-sm text-dt-muted">Enable customer teams to understand, operate and evolve delivered solutions according to the agreed project scope.</p>
+      <p class="ar mt-2 text-sm text-dt-muted">نمّكن فرق العميل من فهم الحلول وتشغيلها وتطويرها وفق نطاق المشروع المتفق عليه.</p>
+    </article>
+  </div>
+  <p class="en mt-12 text-center text-xl font-semibold text-dt-navy-900">{{ tagline_en }}</p>
+  <p class="ar mt-12 text-center text-xl font-semibold text-dt-navy-900">{{ tagline_ar }}</p>
+</section>
+{% endblock %}

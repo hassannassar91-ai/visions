@@ -1,0 +1,50 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}About — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with eyebrow_en="About DroobTech" eyebrow_ar="عن دروب تك" title_en="Technology Built Around <span class=\"dt-heading-accent\">Business Ambition</span>." title_ar="تقنيةُ تُبنى حول <span class=\"dt-heading-accent\">طموحات الأعمال</span>." lead_en="DroobTech Holding is a Saudi investment and technology group focused on helping organizations transform how they operate, connect, analyze and grow through advanced digital technologies." lead_ar="دروب تك القابضة هي مجموعة سعودية للاستثمار والتقنية، تركز على مساعدة المؤسسات في تطوير أساليب عملها وربط أنظمتها والاستفادة من بياناتها وتسريع نموها من خلال التقنيات الرقمية المتقدمة." %}
+
+<section class="dt-section-alt py-16 sm:py-20">
+  <div class="dt-container-narrow">
+    <p class="en text-lg text-dt-muted dt-reveal">Our technology ecosystem brings together Enterprise Technology, Digital Transformation, Data Intelligence & AI, Digital Solution Engineering, Integration and Interoperability. This enables organizations to engage DroobTech for a specific technology requirement or combine multiple capabilities into a broader transformation architecture.</p>
+    <p class="ar text-lg text-dt-muted dt-reveal">تجمع منظومتنا التقنية قدرات تقنيات المؤسسات، والتحول الرقمي، وذكاء البيانات والذكاء الاصطناعي، وهندسة الحلول الرقمية، والتكامل والتشغيل البيني. ويتيح ذلك للمؤسسات الاستفادة من دروب تك لتلبية متطلب تقني محدد، أو دمج عدة قدرات ضمن بنية تحول أكثر شمولاً.</p>
+  </div>
+</section>
+
+<section class="dt-section-light py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Our <span class=\"dt-heading-accent\">Philosophy</span>" title_ar="<span class=\"dt-heading-accent\">فلسفتنا</span>" %}
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="dt-card dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Understand the Business Challenge</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">نفهم تحدي الأعمال</h3>
+        <p class="en mt-2 text-sm text-dt-muted">We begin with the problem, objective and desired outcome.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نبدأ بالمشكلة والهدف والنتيجة المطلوبة.</p>
+      </article>
+      <article class="dt-card dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Respect Existing Technology Investments</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">نحترم الاستثمارات التقنية القائمة</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Transformation does not automatically mean replacing technologies that continue to create value.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">التحول لا يعني تلقائياً استبدال التقنيات التي تستمر في تحقيق قيمة.</p>
+      </article>
+      <article class="dt-card dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Design the Right Technology Architecture</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">نصمم البنية التقنية المناسبة</h3>
+        <p class="en mt-2 text-sm text-dt-muted">We determine the combination of platforms, engineering, data, integration and intelligence required.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نحدد المزيج المناسب من المنصات والهندسة والبيانات والتكامل والذكاء.</p>
+      </article>
+      <article class="dt-card dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Build for Business Value</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">نبني لتحقيق قيمة الأعمال</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Technology is valuable when it improves how the organization operates, understands, decides and grows.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">تصبح التقنية ذات قيمة عندما تحسن طريقة عمل المؤسسة وفهمها واتخاذها للقرارات ونموها.</p>
+      </article>
+    </div>
+    <p class="en mt-10 text-center text-xl font-semibold text-dt-navy-900 dt-reveal">{{ tagline_en }}</p>
+    <p class="ar mt-10 text-center text-xl font-semibold text-dt-navy-900 dt-reveal">{{ tagline_ar }}</p>
+  </div>
+</section>
+
+{% include "droobtech/partials/_cta_band.html" with title_en="Ready to discuss your business challenge?" title_ar="هل أنتم مستعدون لمناقشة تحدي أعمالكم؟" cta_en="Contact DroobTech" cta_ar="تواصل مع دروب تك" %}
+{% endblock %}

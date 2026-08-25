@@ -1,0 +1,16 @@
+<section class="dt-section-navy py-16 sm:py-20">
+  <div class="dt-container text-center">
+    <h2 class="text-3xl font-bold sm:text-4xl dt-reveal">
+      {% if title_en %}<span class="en">{{ title_en|safe }}</span>{% endif %}
+      {% if title_ar %}<span class="ar">{{ title_ar|safe }}</span>{% endif %}
+    </h2>
+    {% if text_en %}<p class="en mx-auto mt-4 max-w-2xl text-lg text-white/80 dt-reveal">{{ text_en }}</p>{% endif %}
+    {% if text_ar %}<p class="ar mx-auto mt-4 max-w-2xl text-lg text-white/80 dt-reveal">{{ text_ar }}</p>{% endif %}
+    <div class="mt-8 dt-reveal">
+      <a href="{% if cta_url %}{{ cta_url }}{% else %}{% url 'contact' %}{% endif %}" class="dt-btn-primary">
+        {% if cta_en %}<span class="en">{{ cta_en }}</span>{% endif %}
+        {% if cta_ar %}<span class="ar">{{ cta_ar }}</span>{% endif %}
+      </a>
+    </div>
+  </div>
+</section>

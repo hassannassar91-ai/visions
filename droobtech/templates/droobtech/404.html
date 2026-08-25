@@ -1,0 +1,17 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Page Not Found — {{ company_name }}{% endblock %}
+
+{% block content %}
+<section class="dt-page-hero">
+  <div class="dt-container text-center">
+    <h1 class="text-4xl font-bold text-dt-navy-900">404</h1>
+    <p class="en mt-4 text-lg text-dt-muted">The page you requested could not be found.</p>
+    <p class="ar mt-4 text-lg text-dt-muted">تعذر العثور على الصفحة المطلوبة.</p>
+    <a href="{% url 'home' %}" class="dt-btn-primary mt-8">
+      <span class="en">Return Home</span>
+      <span class="ar">العودة للرئيسية</span>
+    </a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% load static %}
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 dt-header-top" data-header>
+  <div class="dt-container flex items-center justify-between gap-4 py-3">
+    <a href="{% url 'home' %}" class="shrink-0">
+      <img
+        src="{% static 'droobtech/images/droobtech-logo.svg' %}"
+        alt="{{ company_name }}"
+        class="hidden h-11 w-auto sm:block md:h-12"
+        width="320"
+        height="64"
+        decoding="async"
+        fetchpriority="high"
+      >
+      <img
+        src="{% static 'droobtech/images/droobtech-icon.svg' %}"
+        alt="{{ company_name }}"
+        class="h-10 w-auto sm:hidden"
+        width="48"
+        height="48"
+        decoding="async"
+      >
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="{% if is_arabic %}التنقل الرئيسي{% else %}Main navigation{% endif %}">
+      <a href="{% url 'home' %}" class="dt-nav-link {% if request.resolver_match.url_name == 'home' %}is-active{% endif %}">{% if is_arabic %}الرئيسية{% else %}Home{% endif %}</a>
+      <a href="{% url 'about' %}" class="dt-nav-link {% if request.resolver_match.url_name == 'about' %}is-active{% endif %}">{% if is_arabic %}عن دروب تك{% else %}About{% endif %}</a>
+
+      <div class="dt-nav-group relative">
+        <button type="button" class="dt-nav-link inline-flex cursor-pointer items-center gap-1 {% if 'capabilit' in request.path %}is-active{% endif %}" aria-haspopup="true">
+          {% if is_arabic %}قدراتنا{% else %}Capabilities{% endif %}
+          <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </button>
+        <div class="dt-dropdown-panel">
+          <a href="{% url 'capabilities' %}" class="dt-dropdown-link font-semibold">{% if is_arabic %}جميع القدرات{% else %}All Capabilities{% endif %}</a>
+          <a href="{% url 'capability_detail' slug='digital-transformation' %}" class="dt-dropdown-link en">Digital Transformation</a>
+          <a href="{% url 'capability_detail' slug='digital-transformation' %}" class="dt-dropdown-link ar">التحول الرقمي</a>
+          <a href="{% url 'capability_detail' slug='data-intelligence-ai' %}" class="dt-dropdown-link en">Data Intelligence &amp; AI</a>
+          <a href="{% url 'capability_detail' slug='data-intelligence-ai' %}" class="dt-dropdown-link ar">ذكاء البيانات والذكاء الاصطناعي</a>
+          <a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="dt-dropdown-link en">Enterprise Technology</a>
+          <a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="dt-dropdown-link ar">تقنيات المؤسسات</a>
+          <a href="{% url 'capability_detail' slug='digital-solution-engineering' %}" class="dt-dropdown-link en">Digital Solution Engineering</a>
+          <a href="{% url 'capability_detail' slug='digital-solution-engineering' %}" class="dt-dropdown-link ar">هندسة الحلول الرقمية</a>
+          <a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="dt-dropdown-link en">Integration &amp; Interoperability</a>
+          <a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="dt-dropdown-link ar">التكامل والتشغيل البيني</a>
+        </div>
+      </div>
+
+      <div class="dt-nav-group relative">
+        <button type="button" class="dt-nav-link inline-flex cursor-pointer items-center gap-1 {% if '/solutions/' in request.path %}is-active{% endif %}" aria-haspopup="true">
+          {% if is_arabic %}الحلول والمنصات{% else %}Solutions &amp; Platforms{% endif %}
+          <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </button>
+        <div class="dt-dropdown-panel">
+          <a href="{% url 'solution_detail' slug='nexus' %}" class="dt-dropdown-link">DroobTech NEXUS</a>
+          <a href="{% url 'solution_detail' slug='visions-erp' %}" class="dt-dropdown-link">Visions ERP</a>
+          <a href="{% url 'solution_detail' slug='rapid-digital-solutions' %}" class="dt-dropdown-link en">Rapid Digital Solutions</a>
+          <a href="{% url 'solution_detail' slug='rapid-digital-solutions' %}" class="dt-dropdown-link ar">الحلول الرقمية السريعة</a>
+        </div>
+      </div>
+
+      <a href="{% url 'industries' %}" class="dt-nav-link {% if request.resolver_match.url_name == 'industries' %}is-active{% endif %}">{% if is_arabic %}القطاعات{% else %}Industries{% endif %}</a>
+      <a href="{% url 'experience' %}" class="dt-nav-link {% if request.resolver_match.url_name == 'experience' %}is-active{% endif %}">{% if is_arabic %}خبراتنا{% else %}Experience{% endif %}</a>
+      <a href="{% url 'insights' %}" class="dt-nav-link {% if request.resolver_match.url_name == 'insights' %}is-active{% endif %}">{% if is_arabic %}المعرفة والرؤى{% else %}Insights{% endif %}</a>
+      <a href="{% url 'contact' %}" class="dt-nav-link {% if request.resolver_match.url_name == 'contact' %}is-active{% endif %}">{% if is_arabic %}تواصل معنا{% else %}Contact{% endif %}</a>
+
+      <div class="ms-2 inline-flex overflow-hidden rounded-full border border-dt-border" role="group" aria-label="{% if is_arabic %}تبديل اللغة{% else %}Language switch{% endif %}">
+        <a class="min-h-11 min-w-11 inline-flex items-center justify-center px-3 text-xs font-bold transition-colors {% if not is_arabic %}bg-dt-blue text-white{% else %}text-dt-muted hover:text-dt-blue{% endif %}" href="{% url 'set_language' %}?lang=en&next={{ request.get_full_path|urlencode }}">EN</a>
+        <a class="min-h-11 min-w-11 inline-flex items-center justify-center px-3 text-xs font-bold transition-colors {% if is_arabic %}bg-dt-blue text-white{% else %}text-dt-muted hover:text-dt-blue{% endif %}" href="{% url 'set_language' %}?lang=ar&next={{ request.get_full_path|urlencode }}">{% if is_arabic %}العربية{% else %}AR{% endif %}</a>
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg border border-dt-border text-dt-navy-900 lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="{% if is_arabic %}فتح القائمة{% else %}Open menu{% endif %}"
+      data-nav-toggle
+    >
+      <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+</header>

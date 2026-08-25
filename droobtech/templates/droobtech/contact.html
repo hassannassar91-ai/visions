@@ -1,0 +1,76 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Contact — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="Let's Build What Your Organization <span class=\"dt-heading-accent\">Actually Needs</span>." title_ar="لنبنِ ما <span class=\"dt-heading-accent\">تحتاجه مؤسستك</span> فعلاً." lead_en="Your next technology initiative does not have to start with a product. It can start with a business challenge, a process to digitize, systems to connect, or data to transform into intelligence." lead_ar="لا يجب أن تبدأ مبادرتك التقنية القادمة بمنتج. قد تبدأ بتحدٍ في الأعمال، أو عملية تحتاج إلى الرقمنة، أو أنظمة تحتاج إلى الربط، أو بيانات تحتاج إلى التحول إلى ذكاء." %}
+
+<section class="dt-section-alt py-16">
+  <div class="dt-container">
+    <div class="grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold text-dt-navy-900">{{ company_name }}</h2>
+        <p class="en mt-4 text-dt-muted">{{ address_en }}</p>
+        <p class="ar mt-4 text-dt-muted">{{ address_ar }}</p>
+        <ul class="mt-6 space-y-2 text-dt-muted">
+          <li><a href="https://{{ website_url }}" class="cursor-pointer text-dt-blue hover:underline" dir="ltr">{{ website_url }}</a></li>
+          <li><a href="mailto:{{ contact_email }}" class="cursor-pointer text-dt-blue hover:underline" dir="ltr">{{ contact_email }}</a></li>
+        </ul>
+      </div>
+      <form method="post" action="{% url 'contact' %}" class="dt-card space-y-4" data-contact-form novalidate>
+        {% csrf_token %}
+        <div>
+          <label for="name" class="dt-form-label en">Name</label>
+          <label for="name" class="dt-form-label ar">الاسم</label>
+          <input type="text" id="name" name="name" required class="dt-form-input" autocomplete="name">
+        </div>
+        <div>
+          <label for="organization" class="dt-form-label en">Organization</label>
+          <label for="organization" class="dt-form-label ar">الجهة</label>
+          <input type="text" id="organization" name="organization" class="dt-form-input" autocomplete="organization">
+        </div>
+        <div>
+          <label for="job_title" class="dt-form-label en">Job Title</label>
+          <label for="job_title" class="dt-form-label ar">المسمى الوظيفي</label>
+          <input type="text" id="job_title" name="job_title" class="dt-form-input" autocomplete="organization-title">
+        </div>
+        <div>
+          <label for="email" class="dt-form-label en">Business Email</label>
+          <label for="email" class="dt-form-label ar">البريد الإلكتروني للعمل</label>
+          <input type="email" id="email" name="email" required class="dt-form-input" autocomplete="email">
+        </div>
+        <div>
+          <label for="phone" class="dt-form-label en">Phone Number</label>
+          <label for="phone" class="dt-form-label ar">رقم الهاتف</label>
+          <input type="tel" id="phone" name="phone" class="dt-form-input" autocomplete="tel">
+        </div>
+        <div>
+          <label for="interest" class="dt-form-label en">Area of Interest</label>
+          <label for="interest" class="dt-form-label ar">مجال الاهتمام</label>
+          <select id="interest" name="interest" class="dt-form-input">
+            <option value="">—</option>
+            <option value="digital-transformation">{% if is_arabic %}التحول الرقمي{% else %}Digital Transformation{% endif %}</option>
+            <option value="data-ai">{% if is_arabic %}ذكاء البيانات والذكاء الاصطناعي{% else %}Data Intelligence &amp; AI{% endif %}</option>
+            <option value="nexus">DroobTech NEXUS</option>
+            <option value="enterprise">{% if is_arabic %}تقنيات المؤسسات{% else %}Enterprise Technology{% endif %}</option>
+            <option value="erp">Visions ERP</option>
+            <option value="engineering">{% if is_arabic %}هندسة الحلول الرقمية{% else %}Digital Solution Engineering{% endif %}</option>
+            <option value="integration">{% if is_arabic %}التكامل وهندسة البيانات{% else %}Integration &amp; Data Engineering{% endif %}</option>
+            <option value="complex">{% if is_arabic %}تحدٍ تحولي معقد{% else %}Complex Transformation Challenge{% endif %}</option>
+            <option value="other">{% if is_arabic %}أخرى{% else %}Other{% endif %}</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="dt-form-label en">Business Challenge / Message</label>
+          <label for="message" class="dt-form-label ar">تحدي الأعمال / الرسالة</label>
+          <textarea id="message" name="message" rows="5" required class="dt-form-input"></textarea>
+        </div>
+        <button type="submit" class="dt-btn-primary w-full sm:w-auto">
+          <span class="en">Discuss Your Business Challenge</span>
+          <span class="ar">ناقش تحديات أعمالك معنا</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Insights — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="Knowledge &amp; <span class=\"dt-heading-accent\">Industry Insights</span>" title_ar="المعرفة <span class=\"dt-heading-accent\">ورؤى القطاعات</span>." lead_en="Explore perspectives on digital transformation, data intelligence, enterprise technology and industry trends." lead_ar="استكشف رؤى حول التحول الرقمي وذكاء البيانات وتقنيات المؤسسات واتجاهات القطاعات." %}
+
+<section class="dt-section-alt py-16">
+  <div class="dt-container">
+    <div class="mb-10 flex flex-wrap justify-center gap-3">
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm en">Digital Transformation</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm ar">التحول الرقمي</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm en">Data &amp; AI</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm ar">البيانات والذكاء الاصطناعي</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm en">Enterprise Technology</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm ar">تقنيات المؤسسات</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm en">Industry Insights</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm ar">رؤى القطاعات</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm en">DroobTech News</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm ar">أخبار دروب تك</span>
+    </div>
+    <div class="mx-auto max-w-xl rounded-xl border border-dt-border bg-white p-10 text-center dt-reveal">
+      <p class="en text-dt-muted">Insights content will be published here as verified articles become available.</p>
+      <p class="ar text-dt-muted">سيتم نشر محتوى المعرفة والرؤى هنا عند توفر مقالات موثقة.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

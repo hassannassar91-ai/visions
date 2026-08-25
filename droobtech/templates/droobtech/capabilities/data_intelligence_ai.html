@@ -1,0 +1,15 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Data Intelligence &amp; AI — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="Transform Data Into <span class=\"dt-heading-accent\">Intelligence &amp; AI-Enabled Decisions</span>." title_ar="حوّل البيانات إلى <span class=\"dt-heading-accent\">ذكاء وقرارات مدعومة بالذكاء الاصطناعي</span>." lead_en="Transform enterprise data into analytics, intelligence and AI-enabled decisions across your organization." lead_ar="تحويل بيانات المؤسسة إلى تحليلات وذكاء وقرارات مدعومة بالذكاء الاصطناعي." %}
+
+<section class="dt-section-alt py-16">
+  <div class="dt-container text-center">
+    <a href="{% url 'solution_detail' slug='nexus' %}" class="dt-btn-primary">DroobTech NEXUS</a>
+    <p class="en mt-6 text-sm text-dt-muted">Explore our Data Intelligence &amp; AI Platform</p>
+    <p class="ar mt-6 text-sm text-dt-muted">استكشف منصة ذكاء البيانات والذكاء الاصطناعي</p>
+  </div>
+</section>
+{% endblock %}

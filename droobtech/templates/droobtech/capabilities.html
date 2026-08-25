@@ -1,0 +1,51 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Capabilities — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="Multiple Capabilities. One <span class=\"dt-heading-accent\">Business-First Approach</span>." title_ar="قدرات متعددة. <span class=\"dt-heading-accent\">منهج واحد يبدأ بالأعمال</span>." lead_en="DroobTech brings together five core technology capability areas. They can be engaged independently or combined depending on the business challenge." lead_ar="تجمع دروب تك خمسة مجالات أساسية من القدرات التقنية. ويمكن الاستفادة منها بشكل مستقل أو دمجها وفقاً لتحدي الأعمال." %}
+
+<section class="dt-section-alt py-16 sm:py-20">
+  <div class="dt-container">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <a href="{% url 'capability_detail' slug='digital-transformation' %}" class="dt-card-hover dt-reveal">
+        <p class="dt-tagline">01</p>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 en">Digital Transformation</h2>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 ar">التحول الرقمي</h2>
+        <p class="en mt-2 text-sm text-dt-muted">Transform processes, services and operating models through technology.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">تحويل العمليات والخدمات ونماذج التشغيل من خلال التقنية.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='data-intelligence-ai' %}" class="dt-card-hover dt-reveal">
+        <p class="dt-tagline">02</p>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 en">Data Intelligence &amp; AI</h2>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 ar">ذكاء البيانات والذكاء الاصطناعي</h2>
+        <p class="en mt-2 text-sm text-dt-muted">Transform enterprise data into analytics, intelligence and AI-enabled decisions.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">تحويل بيانات المؤسسة إلى تحليلات وذكاء وقرارات مدعومة بالذكاء الاصطناعي.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="dt-card-hover dt-reveal">
+        <p class="dt-tagline">03</p>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 en">Enterprise Technology</h2>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 ar">تقنيات المؤسسات</h2>
+        <p class="en mt-2 text-sm text-dt-muted">Connect and manage core business operations through integrated enterprise platforms.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">ربط وإدارة العمليات الأساسية للأعمال من خلال منصات مؤسسية متكاملة.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='digital-solution-engineering' %}" class="dt-card-hover dt-reveal">
+        <p class="dt-tagline">04</p>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 en">Digital Solution Engineering</h2>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 ar">هندسة الحلول الرقمية</h2>
+        <p class="en mt-2 text-sm text-dt-muted">Build applications, workflows, portals and digital platforms around specific business requirements.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">بناء التطبيقات وسير العمل والبوابات والمنصات الرقمية حول متطلبات الأعمال المحددة.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="dt-card-hover dt-reveal">
+        <p class="dt-tagline">05</p>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 en">Integration &amp; Interoperability</h2>
+        <h2 class="mt-2 text-xl font-bold text-dt-navy-900 ar">التكامل والتشغيل البيني</h2>
+        <p class="en mt-2 text-sm text-dt-muted">Connect systems, platforms, data sources, operational technologies and digital services.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">ربط الأنظمة والمنصات ومصادر البيانات والتقنيات التشغيلية والخدمات الرقمية.</p>
+      </a>
+    </div>
+    <p class="en mt-12 text-center text-lg font-medium text-dt-navy-900 dt-reveal">The Technology Path Starts With the Business Requirement.</p>
+    <p class="ar mt-12 text-center text-lg font-medium text-dt-navy-900 dt-reveal">يبدأ المسار التقني من متطلبات الأعمال.</p>
+  </div>
+</section>
+{% endblock %}

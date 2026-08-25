@@ -1,0 +1,44 @@
+<section class="dt-page-hero">
+  <div class="dt-tech-waves">{% include "droobtech/partials/_tech_waves.html" %}</div>
+  <div class="dt-container-wide relative">
+    {% if eyebrow_en or eyebrow_ar %}
+    <p class="dt-tagline dt-reveal mb-4">{% if is_arabic %}{{ eyebrow_ar|default:eyebrow_en }}{% else %}{{ eyebrow_en }}{% endif %}</p>
+    {% endif %}
+    <h1 class="text-4xl font-bold tracking-tight text-dt-navy-900 sm:text-5xl lg:text-6xl dt-reveal">
+      {% if title_en %}<span class="en">{{ title_en|safe }}</span>{% endif %}
+      {% if title_ar %}<span class="ar">{{ title_ar|safe }}</span>{% endif %}
+    </h1>
+    {% if subtitle_en %}
+    <p class="en mt-4 text-xl font-medium text-dt-blue sm:text-2xl dt-reveal">{{ subtitle_en }}</p>
+    {% endif %}
+    {% if subtitle_ar %}
+    <p class="ar mt-4 text-xl font-medium text-dt-blue sm:text-2xl dt-reveal">{{ subtitle_ar }}</p>
+    {% endif %}
+    {% if lead_en %}
+    <p class="en mt-6 max-w-3xl text-lg text-dt-muted dt-reveal">{{ lead_en }}</p>
+    {% endif %}
+    {% if lead_ar %}
+    <p class="ar mt-6 max-w-3xl text-lg text-dt-muted dt-reveal">{{ lead_ar }}</p>
+    {% endif %}
+    {% if show_actions %}
+    <div class="mt-8 flex flex-wrap gap-4 dt-reveal">
+      {% if primary_url %}
+      <a href="{{ primary_url }}" class="dt-btn-primary">{{ primary_label_en|default:"Explore Our Capabilities" }}</a>
+      {% else %}
+      <a href="{% url 'capabilities' %}" class="dt-btn-primary">
+        <span class="en">{% if primary_label_en %}{{ primary_label_en }}{% else %}Explore Our Capabilities{% endif %}</span>
+        <span class="ar">{% if primary_label_ar %}{{ primary_label_ar }}{% else %}استكشف قدراتنا{% endif %}</span>
+      </a>
+      {% endif %}
+      {% if secondary_url %}
+      <a href="{{ secondary_url }}" class="dt-btn-secondary">{{ secondary_label_en|default:"Discuss Your Business Challenge" }}</a>
+      {% else %}
+      <a href="{% url 'contact' %}" class="dt-btn-secondary">
+        <span class="en">{% if secondary_label_en %}{{ secondary_label_en }}{% else %}Discuss Your Business Challenge{% endif %}</span>
+        <span class="ar">{% if secondary_label_ar %}{{ secondary_label_ar }}{% else %}ناقش تحديات أعمالك معنا{% endif %}</span>
+      </a>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>

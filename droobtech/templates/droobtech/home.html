@@ -1,0 +1,261 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}DroobTech Holding | Enterprise Technology, Digital Transformation &amp; AI{% endblock %}
+{% block meta_description %}{% if is_arabic %}دروب تك القابضة تساعد المؤسسات على ربط تقنيات المؤسسات والتحول الرقمي وذكاء البيانات والذكاء الاصطناعي لبناء مؤسسات مترابطة وذكية.{% else %}DroobTech Holding helps organizations connect enterprise technology, digital transformation, data intelligence and AI to build connected, intelligent enterprises.{% endif %}{% endblock %}
+
+{% block content %}
+{# Section 01 — Hero #}
+{% include "droobtech/partials/_page_hero.html" with eyebrow_en=positioning_en eyebrow_ar=positioning_ar title_en=tagline_en title_ar=tagline_ar subtitle_en="Technology Built Around Your Business Ambition." subtitle_ar="تقنيةُ تُبنى حول طموحات أعمالك." lead_en="Enterprise Technology, Digital Transformation, Data Intelligence & AI designed around your organization, your technology landscape and your business objectives." lead_ar="تقنيات المؤسسات، والتحول الرقمي، وذكاء البيانات والذكاء الاصطناعي، مصممة حول مؤسستك وبيئتك التقنية وأهداف أعمالك." show_actions=True %}
+
+{# Section 02 — Start With Your Business Challenge #}
+<section class="dt-section-alt py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Start With Your <span class=\"dt-heading-accent\">Business Challenge</span>." title_ar="ابدأ <span class=\"dt-heading-accent\">بتحدي أعمالك</span>." %}
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="{% url 'capability_detail' slug='digital-transformation' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">I Need to Digitize a Process</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">أحتاج إلى رقمنة عملية</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Build digital applications, workflows, portals and services around specific business requirements.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نبني التطبيقات الرقمية وسير العمل والبوابات والخدمات حول متطلبات الأعمال المحددة.</p>
+        <span class="en mt-4 inline-block text-sm font-semibold text-dt-blue">Explore Digital Transformation →</span>
+        <span class="ar mt-4 inline-block text-sm font-semibold text-dt-blue">← استكشف التحول الرقمي</span>
+      </a>
+      <a href="{% url 'solution_detail' slug='nexus' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">I Need Intelligence From My Data</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">أحتاج إلى استخلاص الذكاء من بياناتي</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Connect fragmented data and transform it into analytics, AI and decision intelligence.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نربط البيانات المتفرقة ونحولها إلى تحليلات وذكاء اصطناعي وذكاء لدعم القرار.</p>
+        <span class="en mt-4 inline-block text-sm font-semibold text-dt-blue">Explore DroobTech NEXUS →</span>
+        <span class="ar mt-4 inline-block text-sm font-semibold text-dt-blue">← استكشف DroobTech NEXUS</span>
+      </a>
+      <a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">I Need to Connect My Technology Landscape</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">أحتاج إلى ربط بيئتي التقنية</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Integrate enterprise systems, databases, applications, IoT, OT and external services.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نربط الأنظمة المؤسسية وقواعد البيانات والتطبيقات وإنترنت الأشياء والتقنيات التشغيلية والخدمات الخارجية.</p>
+        <span class="en mt-4 inline-block text-sm font-semibold text-dt-blue">Explore Integration & Data Engineering →</span>
+        <span class="ar mt-4 inline-block text-sm font-semibold text-dt-blue">← استكشف التكامل وهندسة البيانات</span>
+      </a>
+      <a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">I Need to Manage Enterprise Operations</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">أحتاج إلى إدارة عمليات المؤسسة</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Connect finance, people, supply chain, projects, manufacturing, assets and operations.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نربط المالية والموارد البشرية وسلاسل الإمداد والمشاريع والتصنيع والأصول والعمليات.</p>
+        <span class="en mt-4 inline-block text-sm font-semibold text-dt-blue">Explore Enterprise Management →</span>
+        <span class="ar mt-4 inline-block text-sm font-semibold text-dt-blue">← استكشف إدارة المؤسسة</span>
+      </a>
+      <a href="{% url 'contact' %}" class="dt-card-hover sm:col-span-2 lg:col-span-2 dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">I Have a Complex Transformation Challenge</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">لدي تحدٍ تحولي معقد</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Combine multiple technology capabilities into an integrated transformation architecture.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">نجمع عدة قدرات تقنية ضمن بنية تحول متكاملة.</p>
+        <span class="en mt-4 inline-block text-sm font-semibold text-dt-blue">Talk to DroobTech →</span>
+        <span class="ar mt-4 inline-block text-sm font-semibold text-dt-blue">← تحدث مع دروب تك</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Section 03 — The Enterprise Challenge #}
+<section class="dt-section-light py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="More Technology Does Not Always Mean <span class=\"dt-heading-accent\">More Intelligence</span>." title_ar="المزيد من التقنية لا يعني دائماً <span class=\"dt-heading-accent\">المزيد من الذكاء</span>." lead_en="Modern organizations operate increasingly complex technology environments. Yet organizations may still face fragmented systems, manual processes, disconnected data, limited management visibility, slow digital change and technology dependency." lead_ar="تعمل المؤسسات الحديثة ضمن بيئات تقنية متزايدة التعقيد. ومع ذلك، قد تستمر تحديات مثل: الأنظمة المتفرقة، العمليات اليدوية، البيانات غير المترابطة، محدودية الرؤية الإدارية، بطء التغيير الرقمي، والاعتماد التقني." %}
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="dt-card dt-reveal"><p class="font-semibold text-dt-navy-900 en">Fragmented Systems</p><p class="font-semibold text-dt-navy-900 ar">الأنظمة المتفرقة</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold text-dt-navy-900 en">Manual Processes</p><p class="font-semibold text-dt-navy-900 ar">العمليات اليدوية</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold text-dt-navy-900 en">Disconnected Data</p><p class="font-semibold text-dt-navy-900 ar">البيانات غير المترابطة</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold text-dt-navy-900 en">Limited Management Visibility</p><p class="font-semibold text-dt-navy-900 ar">محدودية الرؤية الإدارية</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold text-dt-navy-900 en">Slow Digital Change</p><p class="font-semibold text-dt-navy-900 ar">بطء التغيير الرقمي</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold text-dt-navy-900 en">Technology Dependency</p><p class="font-semibold text-dt-navy-900 ar">الاعتماد التقني</p></div>
+    </div>
+    <p class="en mx-auto mt-10 max-w-3xl text-center text-lg font-medium text-dt-navy-900 dt-reveal">The Challenge Is No Longer Acquiring More Technology. The Challenge Is Making Technology, Processes and Data Work Together.</p>
+    <p class="ar mx-auto mt-10 max-w-3xl text-center text-lg font-medium text-dt-navy-900 dt-reveal">التحدي لم يعد في امتلاك المزيد من التقنية. بل في جعل التقنية والعمليات والبيانات تعمل معاً.</p>
+  </div>
+</section>
+
+{# Section 04 — Technology Ecosystem #}
+<section class="dt-section-alt py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Different Technologies. One <span class=\"dt-heading-accent\">Transformation Ecosystem</span>." title_ar="تقنيات متعددة. <span class=\"dt-heading-accent\">منظومة تحول واحدة</span>." lead_en="DroobTech combines multiple technology capabilities that can be deployed independently or integrated into broader transformation architectures." lead_ar="تجمع دروب تك قدرات تقنية متعددة يمكن تقديمها بشكل مستقل أو دمجها ضمن بنية تحول أكثر شمولاً." %}
+    <div class="relative mx-auto max-w-4xl">
+      <div class="mb-8 text-center">
+        <div class="inline-flex rounded-full border-2 border-dt-turquoise bg-white px-8 py-4 shadow-md">
+          <span class="text-xl font-bold text-dt-navy-900">DroobTech</span>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="dt-ecosystem-pillar dt-reveal">
+          <p class="dt-tagline en">Transform</p><p class="dt-tagline ar">التحول</p>
+          <p class="en mt-2 text-sm font-semibold text-dt-navy-900">Digital Transformation & Rapid Digital Solutions</p>
+          <p class="ar mt-2 text-sm font-semibold text-dt-navy-900">التحول الرقمي والحلول الرقمية السريعة</p>
+        </div>
+        <div class="dt-ecosystem-pillar dt-reveal">
+          <p class="dt-tagline en">Intelligence</p><p class="dt-tagline ar">الذكاء</p>
+          <p class="en mt-2 text-sm font-semibold text-dt-navy-900">Data Intelligence & Artificial Intelligence</p>
+          <p class="ar mt-2 text-sm font-semibold text-dt-navy-900">ذكاء البيانات والذكاء الاصطناعي</p>
+        </div>
+        <div class="dt-ecosystem-pillar dt-reveal">
+          <p class="dt-tagline en">Operate</p><p class="dt-tagline ar">التشغيل</p>
+          <p class="en mt-2 text-sm font-semibold text-dt-navy-900">Enterprise Management</p>
+          <p class="ar mt-2 text-sm font-semibold text-dt-navy-900">إدارة المؤسسة</p>
+        </div>
+        <div class="dt-ecosystem-pillar dt-reveal">
+          <p class="dt-tagline en">Connect</p><p class="dt-tagline ar">الربط</p>
+          <p class="en mt-2 text-sm font-semibold text-dt-navy-900">Integration & Interoperability</p>
+          <p class="ar mt-2 text-sm font-semibold text-dt-navy-900">التكامل والتشغيل البيني</p>
+        </div>
+        <div class="dt-ecosystem-pillar dt-reveal sm:col-span-2 lg:col-span-2">
+          <p class="dt-tagline en">Enable</p><p class="dt-tagline ar">التمكين</p>
+          <p class="en mt-2 text-sm font-semibold text-dt-navy-900">Architecture, Security & Deployment</p>
+          <p class="ar mt-2 text-sm font-semibold text-dt-navy-900">البنية التقنية والأمن والنشر</p>
+        </div>
+      </div>
+      <p class="en mt-8 text-center text-sm font-medium text-dt-muted dt-reveal">Use One Capability. Combine Several. Build End-to-End.</p>
+      <p class="ar mt-8 text-center text-sm font-medium text-dt-muted dt-reveal">استخدم قدرة واحدة. ادمج عدة قدرات. وابن حلولاً متكاملة عند الحاجة.</p>
+    </div>
+  </div>
+</section>
+
+{# Section 05 — Connected Enterprise Architecture #}
+<section class="dt-section-light py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Keep Your Core Systems. Connect the <span class=\"dt-heading-accent\">Intelligence Around Them</span>." title_ar="احتفظ بأنظمتك الأساسية. و<span class=\"dt-heading-accent\">اربط الذكاء من حولها</span>." lead_en="Digital transformation does not require replacing every existing technology investment. DroobTech solutions can be designed to coexist with, connect and extend existing enterprise environments." lead_ar="لا يتطلب التحول الرقمي استبدال جميع الاستثمارات التقنية القائمة. يمكن تصميم حلول دروب تك لتعمل مع البيئات التقنية الحالية، وترابطها، وتوسع قدراتها." %}
+    <div class="mx-auto max-w-3xl space-y-4">
+      <div class="dt-layer-card border-s-4 border-s-dt-blue dt-reveal">
+        <p class="font-bold text-dt-navy-900 en">Layer 01 — Existing Customer Technology</p>
+        <p class="font-bold text-dt-navy-900 ar">الطبقة 01 — البيئة التقنية الحالية</p>
+        <p class="en mt-1 text-dt-muted text-sm">ERP, CRM, Databases, Legacy Applications, Cloud Platforms, IoT, Operational Technology</p>
+        <p class="ar mt-1 text-dt-muted text-sm">ERP، CRM، قواعد البيانات، التطبيقات القديمة، المنصات السحابية، إنترنت الأشياء، التقنيات التشغيلية</p>
+      </div>
+      <div class="dt-layer-card border-s-4 border-s-dt-turquoise dt-reveal">
+        <p class="font-bold text-dt-navy-900 en">Layer 02 — Integration & Data Engineering</p>
+        <p class="font-bold text-dt-navy-900 ar">الطبقة 02 — التكامل وهندسة البيانات</p>
+        <p class="en mt-1 text-dt-muted text-sm">APIs, Data Pipelines, Enterprise Integration, Data Transformation, Secure Connectivity</p>
+        <p class="ar mt-1 text-dt-muted text-sm">واجهات API، مسارات البيانات، تكامل الأنظمة، تحويل البيانات، الاتصال الآمن</p>
+      </div>
+      <div class="dt-layer-card border-s-4 border-s-dt-blue-light dt-reveal">
+        <p class="font-bold text-dt-navy-900 en">Layer 03 — Digital & Intelligence Layer</p>
+        <p class="font-bold text-dt-navy-900 ar">الطبقة 03 — الطبقة الرقمية والذكية</p>
+        <p class="en mt-1 text-dt-muted text-sm">Digital Applications, Workflow Automation, DroobTech NEXUS, Analytics, Artificial Intelligence</p>
+        <p class="ar mt-1 text-dt-muted text-sm">التطبيقات الرقمية، أتمتة سير العمل، DroobTech NEXUS، التحليلات، الذكاء الاصطناعي</p>
+      </div>
+      <div class="dt-layer-card border-s-4 border-s-dt-navy-900 dt-reveal">
+        <p class="font-bold text-dt-navy-900 en">Layer 04 — Business & Management</p>
+        <p class="font-bold text-dt-navy-900 ar">الطبقة 04 — الأعمال والإدارة</p>
+        <p class="en mt-1 text-dt-muted text-sm">Operations, Management, Executives, Decision Makers</p>
+        <p class="ar mt-1 text-dt-muted text-sm">العمليات، الإدارة، القيادات التنفيذية، صنع القرار</p>
+      </div>
+    </div>
+    <p class="en mt-8 text-center font-semibold text-dt-navy-900 dt-reveal">Extend What You Have. Transform What You Need.</p>
+    <p class="ar mt-8 text-center font-semibold text-dt-navy-900 dt-reveal">طور ما لديك. وحول ما تحتاج إليه.</p>
+  </div>
+</section>
+
+{# Section 06 — Featured Capabilities #}
+<section class="dt-section-alt py-16 sm:py-20">
+  <div class="dt-container">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="{% url 'capability_detail' slug='digital-transformation' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Digital Transformation</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">التحول الرقمي</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Digitize processes, services and operating models.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">رقمنة العمليات والخدمات ونماذج التشغيل.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='data-intelligence-ai' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Data Intelligence &amp; AI</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">ذكاء البيانات والذكاء الاصطناعي</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Transform fragmented data into analytics, intelligence and AI-enabled decisions.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">تحويل البيانات المتفرقة إلى تحليلات وذكاء وقرارات مدعومة بالذكاء الاصطناعي.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Enterprise Technology</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">تقنيات المؤسسات</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Connect and manage core enterprise operations.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">ربط وإدارة العمليات الأساسية للمؤسسة.</p>
+      </a>
+      <a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="dt-card-hover dt-reveal">
+        <h3 class="font-bold text-dt-navy-900 en">Integration &amp; Interoperability</h3>
+        <h3 class="font-bold text-dt-navy-900 ar">التكامل والتشغيل البيني</h3>
+        <p class="en mt-2 text-sm text-dt-muted">Connect systems, data and operational environments.</p>
+        <p class="ar mt-2 text-sm text-dt-muted">ربط الأنظمة والبيانات والبيئات التشغيلية.</p>
+      </a>
+    </div>
+    <div class="mt-10 text-center dt-reveal">
+      <a href="{% url 'capabilities' %}" class="dt-btn-primary">
+        <span class="en">Explore All Capabilities</span>
+        <span class="ar">استكشف جميع قدراتنا</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Section 07 — Industries #}
+<section class="dt-section-light py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Industries We <span class=\"dt-heading-accent\">Serve</span>" title_ar="القطاعات <span class=\"dt-heading-accent\">التي نخدمها</span>" %}
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Government &amp; Public Sector</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">الحكومة والقطاع العام</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Manufacturing &amp; Industrial</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">التصنيع والقطاع الصناعي</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Construction &amp; Infrastructure</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">الإنشاءات والبنية التحتية</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Energy &amp; Utilities</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">الطاقة والمرافق</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Transportation &amp; Logistics</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">النقل والخدمات اللوجستية</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Real Estate &amp; Property</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">العقارات وإدارة الأملاك</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Retail &amp; Distribution</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">التجزئة والتوزيع</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Healthcare &amp; Education</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">الرعاية الصحية والتعليم</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal en">Large Enterprises</span>
+      <span class="rounded-full border border-dt-border bg-white px-4 py-2 text-sm font-medium text-dt-navy-900 dt-reveal ar">المؤسسات الكبرى</span>
+    </div>
+    <div class="mt-10 text-center dt-reveal">
+      <a href="{% url 'industries' %}" class="dt-btn-secondary">
+        <span class="en">Explore Industries</span>
+        <span class="ar">استكشف القطاعات</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Section 08 — Experience #}
+<section class="dt-section-alt py-16 sm:py-20">
+  <div class="dt-container text-center">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Saudi Market Presence. Regional Engineering Capability. Multi-Sector Project Experience." title_ar="حضور في السوق السعودي. قدرات هندسية إقليمية. خبرات مشاريع متعددة القطاعات." lead_en="DroobTech combines Saudi market engagement with the established engineering and technology capabilities of its technical arm, Visions Technology Solutions, Jordan." lead_ar="تجمع دروب تك بين حضورها وتفاعلها مع السوق السعودي وبين القدرات الهندسية والتقنية لذراعها التقني Visions Technology Solutions، الأردن." %}
+    <a href="{% url 'experience' %}" class="dt-btn-primary dt-reveal">
+      <span class="en">Explore Our Experience</span>
+      <span class="ar">استكشف خبراتنا</span>
+    </a>
+  </div>
+</section>
+
+{# Section 09 — Why DroobTech #}
+<section class="dt-section-light py-16 sm:py-20">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="One Partner. Multiple Technology Capabilities. One Objective: <span class=\"dt-heading-accent\">Business Value</span>." title_ar="شريك واحد. قدرات تقنية متعددة. هدف واحد، <span class=\"dt-heading-accent\">قيمة الأعمال</span>." %}
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Business-First Approach</p><p class="font-semibold ar">منهج يبدأ بالأعمال</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Multi-Technology Capability</p><p class="font-semibold ar">قدرات تقنية متعددة</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Independent or Integrated Delivery</p><p class="font-semibold ar">تنفيذ مستقل أو متكامل</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Integration-First Thinking</p><p class="font-semibold ar">التكامل أولاً</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Customer Control</p><p class="font-semibold ar">تحكم العميل</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Better Technology Economics</p><p class="font-semibold ar">اقتصاديات تقنية أفضل</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Regional Engineering Capability</p><p class="font-semibold ar">قدرات هندسية إقليمية</p></div>
+      <div class="dt-card dt-reveal"><p class="font-semibold en">Knowledge Transfer</p><p class="font-semibold ar">نقل المعرفة</p></div>
+    </div>
+    <div class="mt-10 text-center dt-reveal">
+      <a href="{% url 'why_droobtech' %}" class="dt-btn-secondary">
+        <span class="en">Why DroobTech</span>
+        <span class="ar">لماذا دروب تك</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Section 10 — Final CTA #}
+{% include "droobtech/partials/_cta_band.html" with title_en="Bring Us a Challenge.<br>Let's Design the Right Technology Path." title_ar="اطرح علينا التحدي.<br>ولنصمم معاً المسار التقني الأنسب." text_en="Your next technology initiative does not have to start with a product. It can start with a business challenge." text_ar="لا يجب أن تبدأ مبادرتك التقنية القادمة بمنتج. يمكن أن تبدأ بتحدٍ في الأعمال." cta_en="Discuss Your Business Challenge" cta_ar="ناقش تحديات أعمالك معنا" %}
+{% endblock %}

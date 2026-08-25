@@ -1,0 +1,25 @@
+<nav id="mobile-nav" class="fixed inset-0 z-[60] hidden bg-white lg:hidden" aria-label="{% if is_arabic %}التنقل{% else %}Mobile navigation{% endif %}" data-mobile-nav>
+  <div class="flex items-center justify-between border-b border-dt-border px-4 py-3">
+    <span class="text-sm font-semibold text-dt-navy-900">{% if is_arabic %}القائمة{% else %}Menu{% endif %}</span>
+    <button type="button" class="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg border border-dt-border" aria-label="{% if is_arabic %}إغلاق{% else %}Close{% endif %}" data-nav-close>
+      <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="overflow-y-auto px-4 py-6">
+    <ul class="space-y-1 text-sm font-medium">
+      <li><a href="{% url 'home' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}الرئيسية{% else %}Home{% endif %}</a></li>
+      <li><a href="{% url 'about' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}عن دروب تك{% else %}About{% endif %}</a></li>
+      <li><a href="{% url 'capabilities' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}قدراتنا{% else %}Capabilities{% endif %}</a></li>
+      <li><a href="{% url 'solution_detail' slug='nexus' %}" class="block rounded-lg px-3 py-3 ps-6 hover:bg-dt-surface">DroobTech NEXUS</a></li>
+      <li><a href="{% url 'solution_detail' slug='visions-erp' %}" class="block rounded-lg px-3 py-3 ps-6 hover:bg-dt-surface">Visions ERP</a></li>
+      <li><a href="{% url 'industries' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}القطاعات{% else %}Industries{% endif %}</a></li>
+      <li><a href="{% url 'experience' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}خبراتنا{% else %}Experience{% endif %}</a></li>
+      <li><a href="{% url 'insights' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}المعرفة والرؤى{% else %}Insights{% endif %}</a></li>
+      <li><a href="{% url 'contact' %}" class="block rounded-lg px-3 py-3 hover:bg-dt-surface">{% if is_arabic %}تواصل معنا{% else %}Contact{% endif %}</a></li>
+    </ul>
+    <div class="mt-6 inline-flex overflow-hidden rounded-full border border-dt-border">
+      <a class="min-h-11 min-w-11 inline-flex items-center justify-center px-4 text-xs font-bold {% if not is_arabic %}bg-dt-blue text-white{% endif %}" href="{% url 'set_language' %}?lang=en&next={{ request.get_full_path|urlencode }}">EN</a>
+      <a class="min-h-11 min-w-11 inline-flex items-center justify-center px-4 text-xs font-bold {% if is_arabic %}bg-dt-blue text-white{% endif %}" href="{% url 'set_language' %}?lang=ar&next={{ request.get_full_path|urlencode }}">{% if is_arabic %}العربية{% else %}AR{% endif %}</a>
+    </div>
+  </div>
+</nav>

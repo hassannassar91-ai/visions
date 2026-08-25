@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@source "../../../../templates/**/*.html";
+
+@theme {
+  --color-dt-navy-950: #061018;
+  --color-dt-navy-900: #0a1628;
+  --color-dt-navy-800: #0f2744;
+  --color-dt-blue: #005eb8;
+  --color-dt-blue-light: #0a6edc;
+  --color-dt-turquoise: #00b4d4;
+  --color-dt-turquoise-dark: #0096b8;
+  --color-dt-surface: #f4f8fc;
+  --color-dt-surface-elevated: #ffffff;
+  --color-dt-text: #0a1628;
+  --color-dt-muted: #64748b;
+  --color-dt-border: #e2e8f0;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-dvh flex flex-col bg-dt-surface-elevated text-dt-text antialiased;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+  }
+
+  body.lang-ar {
+    font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.75;
+  }
+
+  body.lang-ar h1,
+  body.lang-ar h2,
+  body.lang-ar h3,
+  body.lang-ar h4 {
+    font-family: "Noto Sans Arabic", "Poppins", sans-serif;
+  }
+
+  body.lang-en .ar,
+  body.lang-ar .en {
+    @apply hidden;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-dt-turquoise ring-offset-2 ring-offset-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .dt-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .dt-container-narrow {
+    @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
+  }
+
+  .dt-container-wide {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .dt-section-light {
+    @apply relative bg-white text-dt-text;
+  }
+
+  .dt-section-alt {
+    @apply relative bg-dt-surface text-dt-text;
+  }
+
+  .dt-section-navy {
+    @apply relative bg-dt-navy-900 text-white;
+  }
+
+  .dt-tagline {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-dt-blue;
+  }
+
+  .dt-heading-accent {
+    @apply bg-linear-to-r from-dt-turquoise to-dt-blue-light bg-clip-text text-transparent;
+  }
+
+  .dt-btn-primary {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-dt-turquoise px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-dt-turquoise-dark hover:shadow-md;
+  }
+
+  .dt-btn-secondary {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-dt-navy-900 px-6 py-3 text-sm font-semibold text-dt-navy-900 transition-all duration-200 hover:bg-dt-navy-900 hover:text-white;
+  }
+
+  .dt-btn-ghost {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border border-dt-border px-6 py-3 text-sm font-semibold text-dt-navy-900 transition-all duration-200 hover:border-dt-blue hover:text-dt-blue;
+  }
+
+  .dt-card {
+    @apply rounded-xl border border-dt-border bg-white p-6 shadow-sm transition-all duration-200;
+  }
+
+  .dt-card-hover {
+    @apply rounded-xl border border-dt-border bg-white p-6 shadow-sm transition-all duration-200 cursor-pointer hover:-translate-y-0.5 hover:border-dt-turquoise/30 hover:shadow-md;
+  }
+
+  .dt-nav-link {
+    @apply rounded-lg px-3 py-2 text-sm font-medium text-dt-navy-800 transition-colors hover:text-dt-blue;
+  }
+
+  .dt-nav-link.is-active {
+    @apply text-dt-blue font-semibold;
+  }
+
+  .dt-header-top {
+    @apply bg-white/90 backdrop-blur-md border-b border-dt-border/60;
+  }
+
+  .dt-header-scrolled {
+    @apply bg-white shadow-sm;
+  }
+
+  .dt-page-hero {
+    @apply relative overflow-hidden bg-white pb-16 pt-28 sm:pb-20 sm:pt-32;
+  }
+
+  .dt-tech-waves {
+    @apply pointer-events-none absolute inset-0 overflow-hidden opacity-40;
+  }
+
+  .dt-reveal {
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+  }
+
+  .dt-reveal.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .dt-ecosystem-pillar {
+    @apply rounded-xl border border-dt-border bg-white/80 p-5 backdrop-blur-sm;
+  }
+
+  .dt-layer-card {
+    @apply rounded-lg border border-dt-border bg-white p-4 text-sm;
+  }
+
+  .dt-form-input {
+    @apply w-full rounded-lg border border-dt-border bg-white px-4 py-3 text-dt-text transition-colors focus:border-dt-blue focus:outline-none focus:ring-2 focus:ring-dt-blue/20;
+  }
+
+  .dt-form-label {
+    @apply mb-1.5 block text-sm font-medium text-dt-navy-900;
+  }
+
+  .dt-dropdown-panel {
+    @apply invisible absolute start-0 top-full z-50 mt-1 min-w-56 rounded-xl border border-dt-border bg-white py-2 opacity-0 shadow-lg transition-all duration-200;
+  }
+
+  .dt-nav-group:hover .dt-dropdown-panel,
+  .dt-nav-group:focus-within .dt-dropdown-panel {
+    @apply visible opacity-100;
+  }
+
+  .dt-dropdown-link {
+    @apply block cursor-pointer px-4 py-2.5 text-sm text-dt-navy-800 hover:bg-dt-surface hover:text-dt-blue;
+  }
+}

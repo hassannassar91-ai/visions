@@ -1,0 +1,25 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Digital Transformation — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="From Business Requirements to <span class=\"dt-heading-accent\">Production-Ready Digital Solutions</span>." title_ar="من متطلبات الأعمال إلى <span class=\"dt-heading-accent\">حلول رقمية جاهزة للتشغيل</span>." lead_en="Not every business challenge requires another large enterprise platform. Organizations may need the right application, workflow, portal or digital service engineered around a specific operational requirement." lead_ar="لا يتطلب كل تحدٍ في الأعمال إضافة منصة مؤسسية كبيرة جديدة. فقد تحتاج المؤسسة إلى التطبيق المناسب أو سير العمل أو البوابة أو الخدمة الرقمية المصممة حول متطلب تشغيلي محدد." %}
+
+<section class="dt-section-alt py-16">
+  <div class="dt-container">
+    {% include "droobtech/partials/_section_heading.html" with title_en="Capabilities" title_ar="قدراتنا" %}
+    <ul class="mx-auto grid max-w-3xl gap-3 text-dt-muted">
+      <li class="dt-card en">Digital Platforms · Enterprise Applications · Workflow & Process Automation</li>
+      <li class="dt-card ar">المنصات الرقمية · تطبيقات المؤسسات · أتمتة العمليات وسير العمل</li>
+      <li class="dt-card en">Government Digital Services · Customer & Beneficiary Portals · Mobile & Field Applications</li>
+      <li class="dt-card ar">الخدمات الحكومية الرقمية · بوابات العملاء والمستفيدين · تطبيقات الأجهزة المحمولة والعمل الميداني</li>
+    </ul>
+    <p class="en mt-10 text-center text-lg font-semibold text-dt-navy-900">Keep What Works. Digitize What Is Missing. Connect What Matters.</p>
+    <p class="ar mt-10 text-center text-lg font-semibold text-dt-navy-900">نحافظ على ما يعمل. نرقمن ما ينقص. ونربط ما يهم.</p>
+    <div class="mt-8 text-center">
+      <a href="{% url 'solution_detail' slug='rapid-digital-solutions' %}" class="dt-btn-primary en">Explore Rapid Digital Solutions</a>
+      <a href="{% url 'solution_detail' slug='rapid-digital-solutions' %}" class="dt-btn-primary ar">استكشف الحلول الرقمية السريعة</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

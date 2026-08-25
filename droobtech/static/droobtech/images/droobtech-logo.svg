@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="DroobTech Holding">
+  <defs>
+    <linearGradient id="dt-icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b4d4"/>
+      <stop offset="100%" stop-color="#0a6edc"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon monogram -->
+  <rect x="4" y="8" width="48" height="48" rx="10" fill="url(#dt-icon-grad)" opacity="0.12"/>
+  <path d="M20 40c0-8 6-14 14-14s14 6 14 14" fill="none" stroke="url(#dt-icon-grad)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="34" cy="22" r="4" fill="#00b4d4"/>
+  <path d="M28 32h12M28 36h8" stroke="#0a6edc" stroke-width="2" stroke-linecap="round"/>
+  <!-- Wordmark -->
+  <text x="64" y="28" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="700" fill="#0a1628">DroobTech</text>
+  <text x="64" y="44" font-family="Open Sans, Arial, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#005eb8">HOLDING</text>
+  <text x="64" y="56" font-family="Open Sans, Arial, sans-serif" font-size="7" fill="#64748b">Saudi Investment &amp; Technology Group</text>
+</svg>

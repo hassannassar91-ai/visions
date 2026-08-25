@@ -1,0 +1,55 @@
+{% load static %}
+<footer class="dt-section-navy border-t border-white/10">
+  <div class="dt-container py-12 lg:py-16">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <img
+          src="{% static 'droobtech/images/droobtech-logo.svg' %}"
+          alt="{{ company_name }}"
+          class="mb-4 h-10 w-auto brightness-0 invert"
+          width="240"
+          height="48"
+          loading="lazy"
+          decoding="async"
+        >
+        <p class="text-sm text-white/80 en">{{ company_descriptor_en }}</p>
+        <p class="text-sm text-white/80 ar">{{ company_descriptor_ar }}</p>
+        <p class="mt-3 text-sm font-medium text-dt-turquoise en">{{ tagline_en }}</p>
+        <p class="mt-3 text-sm font-medium text-dt-turquoise ar">{{ tagline_ar }}</p>
+      </div>
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">{% if is_arabic %}القدرات{% else %}Capabilities{% endif %}</p>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="cursor-pointer hover:text-dt-turquoise en">Enterprise Technology</a></li>
+          <li><a href="{% url 'capability_detail' slug='enterprise-technology' %}" class="cursor-pointer hover:text-dt-turquoise ar">تقنيات المؤسسات</a></li>
+          <li><a href="{% url 'capability_detail' slug='digital-transformation' %}" class="cursor-pointer hover:text-dt-turquoise en">Digital Transformation</a></li>
+          <li><a href="{% url 'capability_detail' slug='digital-transformation' %}" class="cursor-pointer hover:text-dt-turquoise ar">التحول الرقمي</a></li>
+          <li><a href="{% url 'capability_detail' slug='data-intelligence-ai' %}" class="cursor-pointer hover:text-dt-turquoise en">Data Intelligence &amp; AI</a></li>
+          <li><a href="{% url 'capability_detail' slug='data-intelligence-ai' %}" class="cursor-pointer hover:text-dt-turquoise ar">ذكاء البيانات والذكاء الاصطناعي</a></li>
+          <li><a href="{% url 'capability_detail' slug='digital-solution-engineering' %}" class="cursor-pointer hover:text-dt-turquoise en">Digital Solution Engineering</a></li>
+          <li><a href="{% url 'capability_detail' slug='digital-solution-engineering' %}" class="cursor-pointer hover:text-dt-turquoise ar">هندسة الحلول الرقمية</a></li>
+          <li><a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="cursor-pointer hover:text-dt-turquoise en">Integration &amp; Interoperability</a></li>
+          <li><a href="{% url 'capability_detail' slug='integration-interoperability' %}" class="cursor-pointer hover:text-dt-turquoise ar">التكامل والتشغيل البيني</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">{% if is_arabic %}تواصل{% else %}Contact{% endif %}</p>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li class="en">{{ address_en }}</li>
+          <li class="ar">{{ address_ar }}</li>
+          <li><a href="https://{{ website_url }}" class="cursor-pointer hover:text-dt-turquoise" dir="ltr">{{ website_url }}</a></li>
+          <li><a href="mailto:{{ contact_email }}" class="cursor-pointer hover:text-dt-turquoise" dir="ltr">{{ contact_email }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/60">
+      <div class="flex flex-wrap gap-4">
+        <span class="en">Privacy Policy</span>
+        <span class="ar">سياسة الخصوصية</span>
+        <span class="en">Terms of Use</span>
+        <span class="ar">شروط الاستخدام</span>
+      </div>
+      <p>&copy; {% now "Y" %} {{ company_name }}. {% if is_arabic %}جميع الحقوق محفوظة.{% else %}All rights reserved.{% endif %}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+{% extends "droobtech/base.html" %}
+
+{% block title %}Enterprise Technology — {{ company_name }}{% endblock %}
+
+{% block content %}
+{% include "droobtech/partials/_page_hero.html" with title_en="Connect and Manage <span class=\"dt-heading-accent\">Core Enterprise Operations</span>." title_ar="اربط وأدر <span class=\"dt-heading-accent\">عمليات المؤسسة الأساسية</span>." lead_en="Connect and manage core business operations through integrated enterprise platforms and technologies." lead_ar="ربط وإدارة العمليات الأساسية للأعمال من خلال منصات وتقنيات مؤسسية متكاملة." %}
+
+<section class="dt-section-alt py-16">
+  <div class="dt-container text-center">
+    <a href="{% url 'solution_detail' slug='visions-erp' %}" class="dt-btn-primary">Visions ERP</a>
+    <p class="en mt-6 text-sm text-dt-muted">Enterprise Management capability within the DroobTech portfolio</p>
+    <p class="ar mt-6 text-sm text-dt-muted">قدرة إدارة المؤسسة ضمن محفظة دروب تك</p>
+  </div>
+</section>
+{% endblock %}

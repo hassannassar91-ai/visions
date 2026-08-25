@@ -17,8 +17,8 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes")
 
 DEFAULT_PROD_DOMAINS = [
-    "visions-tek.com",
-    "www.visions-tek.com",
+    "droobtech.sa",
+    "www.droobtech.sa",
 ]
 
 _allowed = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "website",
+    "droobtech",
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "website.context_processors.company",
-                "website.context_processors.language",
+                "droobtech.context_processors.company",
+                "droobtech.context_processors.language",
             ],
         },
     },
