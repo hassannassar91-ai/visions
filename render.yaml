@@ -4,7 +4,7 @@
 services:
   - type: web
     runtime: python
-    name: droobtech-web
+    name: droobtech
     plan: starter
     buildCommand: bash build.sh
     startCommand: gunicorn hasan_test.wsgi:application --bind 0.0.0.0:$PORT
@@ -20,9 +20,9 @@ services:
       - key: DJANGO_DEBUG
         value: "false"
       - key: DJANGO_ALLOWED_HOSTS
-        value: droobtech-web.onrender.com,droobtech.sa,www.droobtech.sa
+        value: droobtech.onrender.com,droobtech.sa,www.droobtech.sa
       - key: DJANGO_CSRF_TRUSTED_ORIGINS
-        value: https://droobtech-web.onrender.com,https://droobtech.sa,https://www.droobtech.sa
+        value: https://droobtech.onrender.com,https://droobtech.sa,https://www.droobtech.sa
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
