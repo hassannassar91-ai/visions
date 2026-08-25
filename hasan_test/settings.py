@@ -27,17 +27,6 @@ SITE_DEFAULT_DOMAINS = {
 
 DEFAULT_PROD_DOMAINS = SITE_DEFAULT_DOMAINS[SITE_BRAND]
 
-SITE_CONTEXT_PROCESSORS = {
-    "droobtech": [
-        "droobtech.context_processors.company",
-        "droobtech.context_processors.language",
-    ],
-    "visions-tech": [
-        "website.context_processors.company",
-        "website.context_processors.language",
-    ],
-}
-
 _allowed = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
 if _allowed:
     ALLOWED_HOSTS = [h.strip() for h in _allowed.split(",") if h.strip()]
@@ -74,6 +63,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "hasan_test.middleware.SiteBrandMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -93,7 +83,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                *SITE_CONTEXT_PROCESSORS[SITE_BRAND],
+                "hasan_test.context_processors.company",
+                "hasan_test.context_processors.language",
             ],
         },
     },
